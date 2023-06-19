@@ -1,0 +1,5 @@
+**/__pycache__
+**/.idea
+**/.ipynb_checkpoints
+utils/openai/openaikey.txt
+utils/classification/model_results

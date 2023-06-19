@@ -1,0 +1,439 @@
+{
+    "img_shape": [
+        2280,
+        1080,
+        3
+    ],
+    "texts": [
+        {
+            "id": 0,
+            "content": "5:08",
+            "column_min": 78,
+            "row_min": 22,
+            "column_max": 151,
+            "row_max": 49,
+            "width": 73,
+            "height": 27
+        },
+        {
+            "id": 1,
+            "content": "NAVY",
+            "column_min": 107,
+            "row_min": 1582,
+            "column_max": 141,
+            "row_max": 1594,
+            "width": 34,
+            "height": 12
+        },
+        {
+            "id": 2,
+            "content": "ARMY",
+            "column_min": 107,
+            "row_min": 1608,
+            "column_max": 143,
+            "row_max": 1620,
+            "width": 36,
+            "height": 12
+        },
+        {
+            "id": 3,
+            "content": "AIR FORCE",
+            "column_min": 108,
+            "row_min": 1633,
+            "column_max": 168,
+            "row_max": 1645,
+            "width": 60,
+            "height": 12
+        },
+        {
+            "id": 4,
+            "content": "For you",
+            "column_min": 193,
+            "row_min": 269,
+            "column_max": 332,
+            "row_max": 310,
+            "width": 139,
+            "height": 41
+        },
+        {
+            "id": 5,
+            "content": "0:59 a woman who",
+            "column_min": 242,
+            "row_min": 431,
+            "column_max": 689,
+            "row_max": 480,
+            "width": 447,
+            "height": 49
+        },
+        {
+            "id": 6,
+            "content": "works at",
+            "column_min": 706,
+            "row_min": 426,
+            "column_max": 926,
+            "row_max": 471,
+            "width": 220,
+            "height": 45
+        },
+        {
+            "id": 7,
+            "content": "CSIDO",
+            "column_min": 532,
+            "row_min": 494,
+            "column_max": 684,
+            "row_max": 514,
+            "width": 152,
+            "height": 20
+        },
+        {
+            "id": 8,
+            "content": "1,633 views",
+            "column_min": 210,
+            "row_min": 542,
+            "column_max": 395,
+            "row_max": 569,
+            "width": 185,
+            "height": 27
+        },
+        {
+            "id": 9,
+            "content": "Q2",
+            "column_min": 212,
+            "row_min": 609,
+            "column_max": 293,
+            "row_max": 652,
+            "width": 81,
+            "height": 43
+        },
+        {
+            "id": 10,
+            "content": "995",
+            "column_min": 267,
+            "row_min": 1200,
+            "column_max": 327,
+            "row_max": 1224,
+            "width": 60,
+            "height": 24
+        },
+        {
+            "id": 11,
+            "content": "11",
+            "column_min": 455,
+            "row_min": 617,
+            "column_max": 484,
+            "row_max": 644,
+            "width": 29,
+            "height": 27
+        },
+        {
+            "id": 12,
+            "content": "54",
+            "column_min": 643,
+            "row_min": 619,
+            "column_max": 685,
+            "row_max": 645,
+            "width": 42,
+            "height": 26
+        },
+        {
+            "id": 13,
+            "content": "Elon Musk replied",
+            "column_min": 212,
+            "row_min": 715,
+            "column_max": 507,
+            "row_max": 754,
+            "width": 295,
+            "height": 39
+        },
+        {
+            "id": 14,
+            "content": "Eva Vlaardingerbroek",
+            "column_min": 211,
+            "row_min": 788,
+            "column_max": 619,
+            "row_max": 825,
+            "width": 408,
+            "height": 37
+        },
+        {
+            "id": 15,
+            "content": "@Eva ...",
+            "column_min": 684,
+            "row_min": 787,
+            "column_max": 811,
+            "row_max": 823,
+            "width": 127,
+            "height": 36
+        },
+        {
+            "id": 16,
+            "content": "3d .",
+            "column_min": 864,
+            "row_min": 787,
+            "column_max": 941,
+            "row_max": 822,
+            "width": 77,
+            "height": 35
+        },
+        {
+            "id": 17,
+            "content": "The Dutch government is ramping up the",
+            "column_min": 269,
+            "row_min": 841,
+            "column_max": 1007,
+            "row_max": 882,
+            "width": 738,
+            "height": 41
+        },
+        {
+            "id": 18,
+            "content": "intimidation & obstruction tactics in light of",
+            "column_min": 212,
+            "row_min": 900,
+            "column_max": 1003,
+            "row_max": 935,
+            "width": 791,
+            "height": 35
+        },
+        {
+            "id": 19,
+            "content": "the upcoming farmers protest in The Hague",
+            "column_min": 210,
+            "row_min": 955,
+            "column_max": 996,
+            "row_max": 990,
+            "width": 786,
+            "height": 35
+        },
+        {
+            "id": 20,
+            "content": "this Saturday : the mayor has said army trucks",
+            "column_min": 208,
+            "row_min": 1009,
+            "column_max": 1041,
+            "row_max": 1045,
+            "width": 833,
+            "height": 36
+        },
+        {
+            "id": 21,
+            "content": "may be deployed and has ordered the farmers",
+            "column_min": 211,
+            "row_min": 1059,
+            "column_max": 1039,
+            "row_max": 1100,
+            "width": 828,
+            "height": 41
+        },
+        {
+            "id": 22,
+            "content": "to not take tractors to the protest .",
+            "column_min": 210,
+            "row_min": 1118,
+            "column_max": 832,
+            "row_max": 1155,
+            "width": 622,
+            "height": 37
+        },
+        {
+            "id": 23,
+            "content": "4,727",
+            "column_min": 455,
+            "row_min": 1199,
+            "column_max": 543,
+            "row_max": 1227,
+            "width": 88,
+            "height": 28
+        },
+        {
+            "id": 24,
+            "content": "17.8K",
+            "column_min": 643,
+            "row_min": 1199,
+            "column_max": 729,
+            "row_max": 1227,
+            "width": 86,
+            "height": 28
+        },
+        {
+            "id": 25,
+            "content": "il\u2081 2.7M",
+            "column_min": 778,
+            "row_min": 1196,
+            "column_max": 906,
+            "row_max": 1232,
+            "width": 128,
+            "height": 36
+        },
+        {
+            "id": 26,
+            "content": "536",
+            "column_min": 268,
+            "row_min": 1438,
+            "column_max": 329,
+            "row_max": 1462,
+            "width": 61,
+            "height": 24
+        },
+        {
+            "id": 27,
+            "content": "1698",
+            "column_min": 399,
+            "row_min": 1434,
+            "column_max": 520,
+            "row_max": 1464,
+            "width": 121,
+            "height": 30
+        },
+        {
+            "id": 28,
+            "content": "Following",
+            "column_min": 718,
+            "row_min": 270,
+            "column_max": 893,
+            "row_max": 307,
+            "width": 175,
+            "height": 37
+        },
+        {
+            "id": 29,
+            "content": "Elon Musk",
+            "column_min": 211,
+            "row_min": 1300,
+            "column_max": 407,
+            "row_max": 1331,
+            "width": 196,
+            "height": 31
+        },
+        {
+            "id": 30,
+            "content": "@elonmusk",
+            "column_min": 470,
+            "row_min": 1300,
+            "column_max": 679,
+            "row_max": 1331,
+            "width": 209,
+            "height": 31
+        },
+        {
+            "id": 31,
+            "content": "3d",
+            "column_min": 714,
+            "row_min": 1300,
+            "column_max": 760,
+            "row_max": 1331,
+            "width": 46,
+            "height": 31
+        },
+        {
+            "id": 32,
+            "content": "!",
+            "column_min": 209,
+            "row_min": 1355,
+            "column_max": 224,
+            "row_max": 1382,
+            "width": 15,
+            "height": 27
+        },
+        {
+            "id": 33,
+            "content": ".",
+            "column_min": 695,
+            "row_min": 1316,
+            "column_max": 703,
+            "row_max": 1320,
+            "width": 8,
+            "height": 4
+        },
+        {
+            "id": 34,
+            "content": "\u20814,829",
+            "column_min": 794,
+            "row_min": 619,
+            "column_max": 925,
+            "row_max": 649,
+            "width": 131,
+            "height": 30
+        },
+        {
+            "id": 35,
+            "content": "9,049",
+            "column_min": 644,
+            "row_min": 1436,
+            "column_max": 738,
+            "row_max": 1465,
+            "width": 94,
+            "height": 29
+        },
+        {
+            "id": 36,
+            "content": "1.3M",
+            "column_min": 829,
+            "row_min": 1434,
+            "column_max": 905,
+            "row_max": 1463,
+            "width": 76,
+            "height": 29
+        },
+        {
+            "id": 37,
+            "content": "Defence Jobs Aust",
+            "column_min": 212,
+            "row_min": 1534,
+            "column_max": 567,
+            "row_max": 1573,
+            "width": 355,
+            "height": 39
+        },
+        {
+            "id": 38,
+            "content": "Discover the roles and see how you can",
+            "column_min": 211,
+            "row_min": 1591,
+            "column_max": 927,
+            "row_max": 1629,
+            "width": 716,
+            "height": 38
+        },
+        {
+            "id": 39,
+            "content": "safeguard the skies . #WhatlsUp",
+            "column_min": 210,
+            "row_min": 1649,
+            "column_max": 793,
+            "row_max": 1687,
+            "width": 583,
+            "height": 38
+        },
+        {
+            "id": 40,
+            "content": "@defencejobsaust",
+            "column_min": 630,
+            "row_min": 1537,
+            "column_max": 966,
+            "row_max": 1575,
+            "width": 336,
+            "height": 38
+        },
+        {
+            "id": 41,
+            "content": ":",
+            "column_min": 1013,
+            "row_min": 1540,
+            "column_max": 1032,
+            "row_max": 1564,
+            "width": 19,
+            "height": 24
+        },
+        {
+            "id": 42,
+            "content": "+",
+            "column_min": 935,
+            "row_min": 1913,
+            "column_max": 979,
+            "row_max": 1964,
+            "width": 44,
+            "height": 51
+        }
+    ]
+}
