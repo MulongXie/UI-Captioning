@@ -74,6 +74,7 @@ class GUI:
         self.remove_redundant_nesting(element_root)
         self.merge_element_with_single_leaf_child(element_root)
         self.extract_children_elements(element_root, 0)
+        self.clac_elements_areas()
         self.gather_leaf_elements()
         # json.dump(self.elements, open(self.output_file_path_elements, 'w', encoding='utf-8'), indent=4)
         # print('Save elements to', self.output_file_path_elements)
@@ -169,6 +170,11 @@ class GUI:
             del element['ancestors']
         return children_depth
 
+    def clac_elements_areas(self):
+        for ele in self.elements:
+            bounds = ele['bounds']
+            ele['area'] = {'height': int(bounds[2] - bounds[0]), 'length': int(bounds[3] - bounds[1])}
+
     def gather_leaf_elements(self):
         i = 0
         for ele in self.elements:
@@ -233,7 +239,7 @@ class GUI:
         self.ocr_text = text_detection(self.img_file)
         # merge text to elements according to position
         for element in self.elements_leaves:
-            if element['text'] == '':
+            if 'text' not in element or element['text'] == '':
                 element['ocr'] = ''
                 match_text_and_element(element)
 
@@ -288,9 +294,9 @@ class GUI:
             element_cp['children'] = []
             for c_id in element_cp['children-id']:
                 element_cp['children'].append(self.combine_children_to_tree(self.elements[c_id]))
-            self.select_ele_attr(element_cp, ['scrollable', 'id', 'resource-id', 'class', 'clickable', 'children', 'description'])
+            self.select_ele_attr(element_cp, ['scrollable', 'id', 'resource-id', 'class', 'clickable', 'children', 'description', 'area'])
         else:
-            self.select_ele_attr(element_cp, ['id', 'resource-id', 'class', 'clickable', 'children', 'description'])
+            self.select_ele_attr(element_cp, ['id', 'resource-id', 'class', 'clickable', 'children', 'description', 'area'])
         self.simplify_ele_attr(element_cp)
         return element_cp
 
@@ -399,9 +405,9 @@ class GUI:
 
 if __name__ == '__main__':
     load = False
-    gui = GUI(gui_img_file='data/twitter/testcase1/device/0.png',
-              gui_json_file='data/twitter/testcase1/device/0.json',
-              output_file_root='data/twitter/testcase1')
+    gui = GUI(gui_img_file='data/app1/testcase1/device/0.png',
+              gui_json_file='data/app1/testcase1/device/0.json',
+              output_file_root='data/app1/testcase1')
     # load previous result
     if load:
         gui.load_elements()

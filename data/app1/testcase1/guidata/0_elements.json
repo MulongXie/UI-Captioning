@@ -27,7 +27,11 @@
             1,
             53
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 1080,
+            "length": 2214
+        }
     },
     {
         "text": "",
@@ -61,7 +65,11 @@
             47,
             52
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 1080,
+            "length": 2148
+        }
     },
     {
         "text": "",
@@ -97,7 +105,11 @@
             12,
             19
         ],
-        "children-depth": 5
+        "children-depth": 5,
+        "area": {
+            "height": 1080,
+            "length": 1144
+        }
     },
     {
         "text": "\u0924\u094c",
@@ -123,6 +135,10 @@
         ],
         "id": 3,
         "layer": 3,
+        "area": {
+            "height": 1080,
+            "length": 314
+        },
         "leaf-id": 0,
         "ocr": "\u0924\u094c",
         "caption": "channel view window",
@@ -153,6 +169,10 @@
         ],
         "id": 4,
         "layer": 3,
+        "area": {
+            "height": 270,
+            "length": 88
+        },
         "leaf-id": 1,
         "caption": "<unk>",
         "icon-cls": null,
@@ -182,6 +202,10 @@
         ],
         "id": 5,
         "layer": 3,
+        "area": {
+            "height": 447,
+            "length": 73
+        },
         "leaf-id": 2,
         "caption": "<unk>",
         "icon-cls": "date_range",
@@ -211,6 +235,10 @@
         ],
         "id": 6,
         "layer": 3,
+        "area": {
+            "height": 161,
+            "length": 50
+        },
         "leaf-id": 3,
         "caption": "choose",
         "icon-cls": null,
@@ -240,6 +268,10 @@
         ],
         "id": 7,
         "layer": 3,
+        "area": {
+            "height": 1014,
+            "length": 159
+        },
         "leaf-id": 4,
         "caption": "banner",
         "icon-cls": null,
@@ -274,7 +306,11 @@
             10,
             11
         ],
-        "children-depth": 4
+        "children-depth": 4,
+        "area": {
+            "height": 1014,
+            "length": 134
+        }
     },
     {
         "text": "Australia",
@@ -300,6 +336,10 @@
         ],
         "id": 9,
         "layer": 4,
+        "area": {
+            "height": 247,
+            "length": 67
+        },
         "leaf-id": 5,
         "caption": "navigate up",
         "icon-cls": null,
@@ -329,6 +369,10 @@
         ],
         "id": 10,
         "layer": 4,
+        "area": {
+            "height": 397,
+            "length": 67
+        },
         "leaf-id": 6,
         "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
         "icon-cls": null,
@@ -358,6 +402,10 @@
         ],
         "id": 11,
         "layer": 4,
+        "area": {
+            "height": 400,
+            "length": 67
+        },
         "leaf-id": 7,
         "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
         "icon-cls": null,
@@ -391,7 +439,11 @@
             13,
             16
         ],
-        "children-depth": 5
+        "children-depth": 5,
+        "area": {
+            "height": 1080,
+            "length": 104
+        }
     },
     {
         "text": "",
@@ -421,7 +473,11 @@
             14,
             15
         ],
-        "children-depth": 5
+        "children-depth": 5,
+        "area": {
+            "height": 303,
+            "length": 104
+        }
     },
     {
         "text": "907",
@@ -447,6 +503,10 @@
         ],
         "id": 14,
         "layer": 5,
+        "area": {
+            "height": 75,
+            "length": 49
+        },
         "leaf-id": 8,
         "caption": "search",
         "icon-cls": null,
@@ -476,6 +536,10 @@
         ],
         "id": 15,
         "layer": 5,
+        "area": {
+            "height": 173,
+            "length": 50
+        },
         "leaf-id": 9,
         "caption": "watch live",
         "icon-cls": null,
@@ -509,7 +573,11 @@
             17,
             18
         ],
-        "children-depth": 5
+        "children-depth": 5,
+        "area": {
+            "height": 336,
+            "length": 104
+        }
     },
     {
         "text": "1,422",
@@ -535,6 +603,10 @@
         ],
         "id": 17,
         "layer": 5,
+        "area": {
+            "height": 106,
+            "length": 49
+        },
         "leaf-id": 10,
         "caption": "copy",
         "icon-cls": null,
@@ -564,6 +636,10 @@
         ],
         "id": 18,
         "layer": 5,
+        "area": {
+            "height": 175,
+            "length": 50
+        },
         "leaf-id": 11,
         "caption": "choose",
         "icon-cls": null,
@@ -593,6 +669,10 @@
         ],
         "id": 19,
         "layer": 3,
+        "area": {
+            "height": 1047,
+            "length": 85
+        },
         "leaf-id": 12,
         "ocr": "Not followed by anyone you're following",
         "caption": "minimize map",
@@ -628,7 +708,11 @@
             22,
             23
         ],
-        "children-depth": 3
+        "children-depth": 3,
+        "area": {
+            "height": 1080,
+            "length": 154
+        }
     },
     {
         "text": "",
@@ -654,6 +738,10 @@
         ],
         "id": 21,
         "layer": 3,
+        "area": {
+            "height": 154,
+            "length": 154
+        },
         "leaf-id": 13,
         "ocr": "",
         "caption": "navigate up",
@@ -684,6 +772,10 @@
         ],
         "id": 22,
         "layer": 3,
+        "area": {
+            "height": 132,
+            "length": 132
+        },
         "leaf-id": 14,
         "ocr": "",
         "caption": "search",
@@ -714,6 +806,10 @@
         ],
         "id": 23,
         "layer": 3,
+        "area": {
+            "height": 133,
+            "length": 132
+        },
         "leaf-id": 15,
         "ocr": "",
         "caption": "more",
@@ -748,7 +844,11 @@
             25,
             26
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 1080,
+            "length": 1994
+        }
     },
     {
         "text": "James Purser@purserjAustraliaangrybeanie.comJoined May 2008907 Following1,422 FollowersNot followed by anyone you're followingTweetsWarning , this feed may contain the following : Humour ,politics , science , rants , photographs , playing withmedia and more .purserjaus.socialTweets & repliesMediaFollowLikes",
@@ -774,6 +874,10 @@
         ],
         "id": 25,
         "layer": 3,
+        "area": {
+            "height": 1080,
+            "length": 1122
+        },
         "leaf-id": 16,
         "ocr": "James Purser@purserjAustraliaangrybeanie.comJoined May 2008907 Following1,422 FollowersNot followed by anyone you're followingTweetsWarning , this feed may contain the following : Humour ,politics , science , rants , photographs , playing withmedia and more .purserjaus.socialTweets & repliesMediaFollowLikes",
         "caption": "img",
@@ -814,7 +918,11 @@
             33,
             36
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 1080,
+            "length": 872
+        }
     },
     {
         "text": "",
@@ -840,6 +948,10 @@
         ],
         "id": 27,
         "layer": 4,
+        "area": {
+            "height": 44,
+            "length": 44
+        },
         "leaf-id": 17,
         "ocr": "",
         "caption": "man icon",
@@ -870,6 +982,10 @@
         ],
         "id": 28,
         "layer": 4,
+        "area": {
+            "height": 870,
+            "length": 70
+        },
         "leaf-id": 18,
         "ocr": "Pinned Tweet",
         "caption": "minimize map",
@@ -900,6 +1016,10 @@
         ],
         "id": 29,
         "layer": 4,
+        "area": {
+            "height": 149,
+            "length": 149
+        },
         "leaf-id": 19,
         "ocr": "",
         "caption": "profile photo",
@@ -930,6 +1050,10 @@
         ],
         "id": 30,
         "layer": 4,
+        "area": {
+            "height": 771,
+            "length": 39
+        },
         "leaf-id": 20,
         "ocr": "James Purser @purserj29 Nov 16",
         "caption": "<unk>",
@@ -961,6 +1085,10 @@
         ],
         "id": 31,
         "layer": 4,
+        "area": {
+            "height": 88,
+            "length": 88
+        },
         "leaf-id": 21,
         "ocr": "If you haven't caught up with it yet , checkout",
         "caption": "more options",
@@ -991,6 +1119,10 @@
         ],
         "id": 32,
         "layer": 4,
+        "area": {
+            "height": 837,
+            "length": 214
+        },
         "leaf-id": 22,
         "caption": "banner",
         "icon-cls": null,
@@ -1024,7 +1156,11 @@
             34,
             35
         ],
-        "children-depth": 5
+        "children-depth": 5,
+        "area": {
+            "height": 837,
+            "length": 402
+        }
     },
     {
         "text": "ForScience",
@@ -1050,6 +1186,10 @@
         ],
         "id": 34,
         "layer": 5,
+        "area": {
+            "height": 55,
+            "length": 55
+        },
         "leaf-id": 23,
         "ocr": "ForScience",
         "caption": "<unk>",
@@ -1080,6 +1220,10 @@
         ],
         "id": 35,
         "layer": 5,
+        "area": {
+            "height": 703,
+            "length": 41
+        },
         "leaf-id": 24,
         "ocr": "For Science ! @ABForSc ...28 Nov 16",
         "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
@@ -1117,7 +1261,11 @@
             44,
             45
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 865,
+            "length": 100
+        }
     },
     {
         "NAF": true,
@@ -1144,6 +1292,10 @@
         ],
         "id": 37,
         "layer": 5,
+        "area": {
+            "height": 188,
+            "length": 100
+        },
         "leaf-id": 25,
         "ocr": "",
         "caption": "<unk>",
@@ -1178,7 +1330,11 @@
             39,
             40
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 188,
+            "length": 100
+        }
     },
     {
         "text": "178",
@@ -1204,6 +1360,10 @@
         ],
         "id": 39,
         "layer": 6,
+        "area": {
+            "height": 50,
+            "length": 50
+        },
         "leaf-id": 26,
         "ocr": "178",
         "caption": "switch direction",
@@ -1234,6 +1394,10 @@
         ],
         "id": 40,
         "layer": 6,
+        "area": {
+            "height": 21,
+            "length": 43
+        },
         "leaf-id": 27,
         "caption": "<unk>",
         "icon-cls": null,
@@ -1267,7 +1431,11 @@
             42,
             43
         ],
-        "children-depth": 6
+        "children-depth": 6,
+        "area": {
+            "height": 188,
+            "length": 100
+        }
     },
     {
         "text": "",
@@ -1293,6 +1461,10 @@
         ],
         "id": 42,
         "layer": 6,
+        "area": {
+            "height": 50,
+            "length": 50
+        },
         "leaf-id": 28,
         "ocr": "",
         "caption": "add to favorites",
@@ -1323,6 +1495,10 @@
         ],
         "id": 43,
         "layer": 6,
+        "area": {
+            "height": 18,
+            "length": 43
+        },
         "leaf-id": 29,
         "caption": "forward",
         "icon-cls": "edit",
@@ -1353,6 +1529,10 @@
         ],
         "id": 44,
         "layer": 5,
+        "area": {
+            "height": 188,
+            "length": 100
+        },
         "leaf-id": 30,
         "ocr": "\u0627\u0631+",
         "caption": "<unk> map",
@@ -1384,6 +1564,10 @@
         ],
         "id": 45,
         "layer": 5,
+        "area": {
+            "height": 113,
+            "length": 100
+        },
         "leaf-id": 31,
         "ocr": "+",
         "caption": "<unk>",
@@ -1414,6 +1598,10 @@
         ],
         "id": 46,
         "layer": 2,
+        "area": {
+            "height": 189,
+            "length": 189
+        },
         "leaf-id": 32,
         "ocr": "",
         "caption": "image thumbnail",
@@ -1450,7 +1638,11 @@
             50,
             51
         ],
-        "children-depth": 3
+        "children-depth": 3,
+        "area": {
+            "height": 1080,
+            "length": 132
+        }
     },
     {
         "text": "Tweets",
@@ -1476,6 +1668,10 @@
         ],
         "id": 48,
         "layer": 3,
+        "area": {
+            "height": 154,
+            "length": 50
+        },
         "leaf-id": 33,
         "caption": "icon",
         "icon-cls": null,
@@ -1505,6 +1701,10 @@
         ],
         "id": 49,
         "layer": 3,
+        "area": {
+            "height": 390,
+            "length": 132
+        },
         "leaf-id": 34,
         "ocr": "Tweets & replies",
         "caption": "loading",
@@ -1535,6 +1735,10 @@
         ],
         "id": 50,
         "layer": 3,
+        "area": {
+            "height": 230,
+            "length": 132
+        },
         "leaf-id": 35,
         "ocr": "Media",
         "caption": "loading",
@@ -1565,6 +1769,10 @@
         ],
         "id": 51,
         "layer": 3,
+        "area": {
+            "height": 230,
+            "length": 132
+        },
         "leaf-id": 36,
         "ocr": "Likes",
         "caption": "loading",
@@ -1595,6 +1803,10 @@
         ],
         "id": 52,
         "layer": 2,
+        "area": {
+            "height": 198,
+            "length": 198
+        },
         "leaf-id": 37,
         "ocr": "angrybeanie.com/shows/women-st+",
         "caption": "add first task",
@@ -1625,6 +1837,10 @@
         ],
         "id": 53,
         "layer": 1,
+        "area": {
+            "height": 1080,
+            "length": 66
+        },
         "leaf-id": 38,
         "ocr": "",
         "caption": "navigate up",
