@@ -3,8 +3,14 @@ import cv2
 import time
 
 
-class GUIDataManager:
+class DeviceGUIManager:
     def __init__(self, app_name, test_case_no, output_file_root='data'):
+        '''
+        Collect and analyze GUI from Device directly
+        :param app_name: current app name
+        :param test_case_no: set test case no
+        :param output_file_root: directory to output the results
+        '''
         self.app_name = app_name
         self.test_case_no = test_case_no
         self.output_file_root = output_file_root
