@@ -8,199 +8,44 @@
     },
     "children": [
         {
-            "clickable": false,
-            "class": ".widget.LinearLayout",
+            "clickable": true,
+            "class": "org.apache.cordova.engine.SystemWebView",
             "id": 1,
             "area": {
                 "height": 1440,
                 "length": 2392
             },
+            "description": " Initial Setup Default period length The length of your period . Usually lasts between and days Default cycle length The duration between the start dates of two periods . Usually between 23 and 35 days . Start date of your last period 10 30 Feb 2017 Continue"
+        },
+        {
+            "clickable": false,
+            "class": "com.digitalchemy.foundation.advertising.c.a",
+            "id": 2,
+            "area": {
+                "height": 1440,
+                "length": 175
+            },
             "children": [
                 {
-                    "resource-id": ":id/action_mode_bar_stub",
                     "clickable": false,
-                    "class": ".view.ViewStub",
-                    "id": 2,
-                    "area": {
-                        "height": 0,
-                        "length": 0
-                    }
-                },
-                {
-                    "resource-id": ":id/content",
-                    "clickable": false,
-                    "class": ".widget.FrameLayout",
+                    "children": [],
+                    "class": "com.google.gms.ads.AdView",
                     "id": 3,
                     "area": {
-                        "height": 1440,
-                        "length": 2392
+                        "height": 1438,
+                        "length": 175
                     },
-                    "children": [
-                        {
-                            "clickable": false,
-                            "class": ".widget.FrameLayout",
-                            "id": 4,
-                            "area": {
-                                "height": 1440,
-                                "length": 2392
-                            },
-                            "children": [
-                                {
-                                    "resource-id": ".brc.PeriodTrackerDiary:id/webViewContainer",
-                                    "clickable": false,
-                                    "class": ".widget.FrameLayout",
-                                    "id": 5,
-                                    "area": {
-                                        "height": 1440,
-                                        "length": 2392
-                                    },
-                                    "children": [
-                                        {
-                                            "clickable": true,
-                                            "class": "org.apache.cordova.engine.SystemWebView",
-                                            "id": 6,
-                                            "area": {
-                                                "height": 1440,
-                                                "length": 2392
-                                            }
-                                        }
-                                    ]
-                                },
-                                {
-                                    "resource-id": ".brc.PeriodTrackerDiary:id/ads",
-                                    "clickable": false,
-                                    "class": ".widget.FrameLayout",
-                                    "id": 7,
-                                    "area": {
-                                        "height": 1440,
-                                        "length": 178
-                                    },
-                                    "children": [
-                                        {
-                                            "clickable": false,
-                                            "class": ".view.View",
-                                            "id": 8,
-                                            "area": {
-                                                "height": 1440,
-                                                "length": 3
-                                            }
-                                        },
-                                        {
-                                            "clickable": false,
-                                            "class": "com.digitalchemy.foundation.advertising.c.a",
-                                            "id": 9,
-                                            "area": {
-                                                "height": 1440,
-                                                "length": 175
-                                            },
-                                            "children": [
-                                                {
-                                                    "clickable": false,
-                                                    "class": "com.google.gms.ads.AdView",
-                                                    "id": 10,
-                                                    "area": {
-                                                        "height": 1438,
-                                                        "length": 175
-                                                    },
-                                                    "children": [
-                                                        {
-                                                            "clickable": false,
-                                                            "class": "com.google.gms.ads.internal.bp",
-                                                            "id": 11,
-                                                            "area": {
-                                                                "height": 0,
-                                                                "length": 0
-                                                            },
-                                                            "children": [
-                                                                {
-                                                                    "clickable": false,
-                                                                    "class": "in",
-                                                                    "id": 12,
-                                                                    "area": {
-                                                                        "height": 0,
-                                                                        "length": 0
-                                                                    },
-                                                                    "children": [
-                                                                        {
-                                                                            "clickable": false,
-                                                                            "class": "com.google.gms.ads.internal.bp",
-                                                                            "id": 13,
-                                                                            "area": {
-                                                                                "height": 0,
-                                                                                "length": 0
-                                                                            },
-                                                                            "children": [
-                                                                                {
-                                                                                    "clickable": false,
-                                                                                    "class": "com.google.gms.ads.internal.webview.n",
-                                                                                    "id": 14,
-                                                                                    "area": {
-                                                                                        "height": 0,
-                                                                                        "length": 0
-                                                                                    },
-                                                                                    "children": [
-                                                                                        {
-                                                                                            "clickable": true,
-                                                                                            "class": "com.google.gms.ads.internal.webview.o",
-                                                                                            "id": 15,
-                                                                                            "area": {
-                                                                                                "height": 0,
-                                                                                                "length": 0
-                                                                                            }
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "clickable": false,
-                                                    "class": "com.digitalchemy.foundation.advertising.mopub.MoPubAdWrapper",
-                                                    "id": 16,
-                                                    "area": {
-                                                        "height": 0,
-                                                        "length": 0
-                                                    }
-                                                },
-                                                {
-                                                    "clickable": false,
-                                                    "class": "com.digitalchemy.foundation.advertising.amazon.AmazonAdWrapper",
-                                                    "id": 17,
-                                                    "area": {
-                                                        "height": 0,
-                                                        "length": 0
-                                                    }
-                                                },
-                                                {
-                                                    "clickable": false,
-                                                    "class": "com.digitalchemy.foundation.advertising.mopub.MoPubAdWrapper",
-                                                    "id": 18,
-                                                    "area": {
-                                                        "height": 0,
-                                                        "length": 0
-                                                    }
-                                                },
-                                                {
-                                                    "clickable": false,
-                                                    "class": "com.google.gms.ads.AdView",
-                                                    "id": 19,
-                                                    "area": {
-                                                        "height": 1438,
-                                                        "length": 175
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "description": " Continue"
+                },
+                {
+                    "clickable": false,
+                    "class": "com.google.gms.ads.AdView",
+                    "id": 4,
+                    "area": {
+                        "height": 1438,
+                        "length": 175
+                    },
+                    "description": " Continue"
                 }
             ]
         },
@@ -208,7 +53,7 @@
             "resource-id": ":id/navigationBarBackground",
             "clickable": false,
             "class": ".view.View",
-            "id": 20,
+            "id": 5,
             "area": {
                 "height": 1440,
                 "length": 168

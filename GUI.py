@@ -16,13 +16,13 @@ warnings.filterwarnings("ignore", category=Warning)
 
 class GUI:
     def __init__(self, gui_img_file, gui_json_file, output_file_root='data/twitter/testcase1',
-                 model_icon_caption=None, model_icon_classification=None):
+                 resize=(1080, 2280), model_icon_caption=None, model_icon_classification=None):
         self.img_file = gui_img_file
         self.json_file = gui_json_file
         self.gui_no = gui_img_file.replace('/', '\\').split('\\')[-1].split('.')[0]
 
-        # self.img = cv2.resize(cv2.imread(gui_img_file), (1080, 2280))      # resize the image to be consistent with the vh
-        self.img = cv2.resize(cv2.imread(gui_img_file), (1440, 2560))      # resize the image to be consistent with the vh
+        self.resize = resize
+        self.img = cv2.resize(cv2.imread(gui_img_file), resize)      # resize the image to be consistent with the vh
         self.json = json.load(open(gui_json_file, 'r', encoding='utf-8'))  # json data, the view hierarchy of the GUI
 
         self.element_id = 0
@@ -138,7 +138,7 @@ class GUI:
         if 'children' in element:
             if len(element['children']) == 1 and 'children' not in element['children'][0]:
                 child = element['children'][0]
-                element['resource-id'] = child['resource-id']
+                element['resource-id'] = child['resource-id'] if 'resource-id' in child else ''
                 element['class'] = child['class']
                 element['clickable'] = child['clickable']
                 self.removed_node_no += 1
@@ -234,6 +234,13 @@ class GUI:
         # print('Save elements to', self.output_file_path_elements)
 
     def ocr_detect_gui_text(self):
+        scale_w = self.resize[0] / self.img.shape[1]
+        scale_h = self.resize[1] / self.img.shape[0]
+
+        def scale_text_bounds(bounds):
+            return [bounds[0] * scale_w, bounds[1] * scale_h,
+                    bounds[2] * scale_w, bounds[3] * scale_h]
+
         def match_text_and_element(ele):
             '''
             Match ocr text and element through iou
@@ -243,11 +250,14 @@ class GUI:
                 # calculate intersected area between text and element
                 intersected = max(0, min(t_b[2], e_b[2]) - max(t_b[0], e_b[0])) * max(0, min(t_b[3], e_b[3]) - max(t_b[1], e_b[1]))
                 if intersected > 0:
-                    ele['ocr'] += text['content']
-                    ele['text'] += text['content']
+                    ele['ocr'] = ' '.join([ele['ocr'], text['content']])
+                    ele['text'] = ' '.join([ele['text'], text['content']])
 
         # google ocr detection for the GUI image
         self.ocr_text = text_detection(self.img_file)
+        for t in self.ocr_text:
+            t['bounds'] = scale_text_bounds(t['bounds'])
+
         # merge text to elements according to position
         for element in self.elements_leaves:
             if 'text' not in element or element['text'] == '':
@@ -417,9 +427,10 @@ class GUI:
 
 if __name__ == '__main__':
     load = False
-    gui = GUI(gui_img_file='data/app1/testcase1/device/0.png',
-              gui_json_file='data/app1/testcase1/device/0.json',
-              output_file_root='data/app1/testcase1')
+    gui = GUI(gui_img_file='data/rico/raw/0.png',
+              gui_json_file='data/rico/raw/0.json',
+              output_file_root='data/rico/guidata',
+              resize=(1440, 2560))
     # load previous result
     if load:
         gui.load_elements()

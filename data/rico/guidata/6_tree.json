@@ -1,0 +1,422 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1440,
+        "length": 2560
+    },
+    "children": [
+        {
+            "resource-id": "se.perigee.seven:id/img_start",
+            "clickable": true,
+            "class": ".support.v7.widget.AppCompatImageView",
+            "id": 1,
+            "area": {
+                "height": 980,
+                "length": 980
+            },
+            "description": " START WORKOUT Workout Circuits Full Body / Start"
+        },
+        {
+            "resource-id": "se.perigee.seven:id/start_workout_start",
+            "clickable": true,
+            "class": "com.perigee.seven.ui.view.AutoResizeTextView",
+            "id": 2,
+            "area": {
+                "height": 637,
+                "length": 140
+            },
+            "description": "Start"
+        },
+        {
+            "resource-id": "se.perigee.seven:id/start_workout_workout",
+            "clickable": true,
+            "class": "com.perigee.seven.ui.view.AutoResizeTextView",
+            "id": 3,
+            "area": {
+                "height": 637,
+                "length": 140
+            },
+            "description": "Workout"
+        },
+        {
+            "resource-id": "se.perigee.seven:id/session_workout",
+            "clickable": true,
+            "class": ".widget.LinearLayout",
+            "id": 4,
+            "area": {
+                "height": 1440,
+                "length": 186
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/image",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 5,
+                    "area": {
+                        "height": 126,
+                        "length": 91
+                    },
+                    "description": "location search"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text3",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 6,
+                    "area": {
+                        "height": 292,
+                        "length": 97
+                    },
+                    "description": "Full Body"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text1",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 7,
+                    "area": {
+                        "height": 270,
+                        "length": 97
+                    },
+                    "description": "Workout"
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/session_circuits",
+            "clickable": true,
+            "class": ".widget.LinearLayout",
+            "id": 8,
+            "area": {
+                "height": 1440,
+                "length": 186
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/image",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 9,
+                    "area": {
+                        "height": 126,
+                        "length": 91
+                    },
+                    "description": "refresh"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text3",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 10,
+                    "area": {
+                        "height": 40,
+                        "length": 97
+                    },
+                    "description": "1"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text1",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 11,
+                    "area": {
+                        "height": 243,
+                        "length": 97
+                    },
+                    "description": "Circuits"
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/session_instructor",
+            "clickable": true,
+            "class": ".widget.LinearLayout",
+            "id": 12,
+            "area": {
+                "height": 1440,
+                "length": 186
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/image",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 13,
+                    "area": {
+                        "height": 126,
+                        "length": 91
+                    }
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text3",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 14,
+                    "area": {
+                        "height": 348,
+                        "length": 97
+                    },
+                    "description": "Announcer"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text1",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 15,
+                    "area": {
+                        "height": 311,
+                        "length": 97
+                    },
+                    "description": "Instructor"
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/bottomBar",
+            "clickable": false,
+            "class": "com.roughike.bottombar.BottomBar",
+            "id": 16,
+            "area": {
+                "height": 1440,
+                "length": 210
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/bb_bottom_bar_shadow",
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 17,
+                    "area": {
+                        "height": 1440,
+                        "length": 14
+                    },
+                    "description": "share"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/bb_bottom_bar_background_overlay",
+                    "clickable": false,
+                    "class": ".view.View",
+                    "id": 18,
+                    "area": {
+                        "height": 1440,
+                        "length": 196
+                    }
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/tab_workout",
+                    "clickable": true,
+                    "class": "com.roughike.bottombar.BottomBarTab",
+                    "id": 19,
+                    "area": {
+                        "height": 357,
+                        "length": 196
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_icon",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 20,
+                            "area": {
+                                "height": 84,
+                                "length": 105
+                            },
+                            "description": "time"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_title",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 21,
+                            "area": {
+                                "height": 209,
+                                "length": 91
+                            },
+                            "description": "Workout"
+                        }
+                    ]
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/tab_learn",
+                    "clickable": true,
+                    "class": "com.roughike.bottombar.BottomBarTab",
+                    "id": 22,
+                    "area": {
+                        "height": 357,
+                        "length": 196
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_icon",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 23,
+                            "area": {
+                                "height": 84,
+                                "length": 112
+                            },
+                            "description": "all"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_title",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 24,
+                            "area": {
+                                "height": 120,
+                                "length": 72
+                            },
+                            "description": "Learn"
+                        }
+                    ]
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/tab_achievements",
+                    "clickable": true,
+                    "class": "com.roughike.bottombar.BottomBarTab",
+                    "id": 25,
+                    "area": {
+                        "height": 357,
+                        "length": 196
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_icon",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 26,
+                            "area": {
+                                "height": 84,
+                                "length": 112
+                            },
+                            "description": "panda"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_title",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 27,
+                            "area": {
+                                "height": 305,
+                                "length": 72
+                            },
+                            "description": "Achievements"
+                        }
+                    ]
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/tab_track",
+                    "clickable": true,
+                    "class": "com.roughike.bottombar.BottomBarTab",
+                    "id": 28,
+                    "area": {
+                        "height": 357,
+                        "length": 196
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_icon",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 29,
+                            "area": {
+                                "height": 84,
+                                "length": 112
+                            },
+                            "description": "share"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/bb_bottom_bar_title",
+                            "clickable": true,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 30,
+                            "area": {
+                                "height": 116,
+                                "length": 72
+                            },
+                            "description": "Track"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/action_bar",
+            "clickable": false,
+            "class": ".support.v7.widget.Toolbar",
+            "id": 31,
+            "area": {
+                "height": 1440,
+                "length": 196
+            },
+            "children": [
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 32,
+                    "area": {
+                        "height": 265,
+                        "length": 93
+                    },
+                    "description": "Workout"
+                },
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.ActionMenuView",
+                    "id": 33,
+                    "area": {
+                        "height": 308,
+                        "length": 196
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/action_workout_info",
+                            "clickable": true,
+                            "class": ".support.v7.view.menu.ActionMenuItemView",
+                            "id": 34,
+                            "area": {
+                                "height": 168,
+                                "length": 168
+                            },
+                            "description": "Info"
+                        },
+                        {
+                            "clickable": true,
+                            "class": ".support.v7.widget.ActionMenuPresenter$d",
+                            "id": 35,
+                            "area": {
+                                "height": 140,
+                                "length": 168
+                            },
+                            "description": "More options"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/navigationBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 36,
+            "area": {
+                "height": 1440,
+                "length": 168
+            }
+        },
+        {
+            "resource-id": ":id/statusBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 37,
+            "area": {
+                "height": 1440,
+                "length": 84
+            },
+            "description": " FAK 5:04"
+        }
+    ]
+}

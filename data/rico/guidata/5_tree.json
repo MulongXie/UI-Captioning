@@ -1,0 +1,226 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1440,
+        "length": 2560
+    },
+    "children": [
+        {
+            "clickable": true,
+            "class": ".widget.RelativeLayout",
+            "id": 1,
+            "area": {
+                "height": 1440,
+                "length": 2112
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/video",
+                    "clickable": true,
+                    "class": "com.perigee.seven.ui.view.VideoView",
+                    "id": 2,
+                    "area": {
+                        "height": 441,
+                        "length": 441
+                    },
+                    "description": " 10"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/video_overlay",
+                    "clickable": true,
+                    "class": ".view.View",
+                    "id": 3,
+                    "area": {
+                        "height": 441,
+                        "length": 441
+                    },
+                    "description": " 10"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/progress",
+                    "clickable": true,
+                    "class": "com.perigee.seven.ui.view.SegmentedProgressView",
+                    "id": 4,
+                    "area": {
+                        "height": 350,
+                        "length": 350
+                    }
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/forward",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 5,
+                    "area": {
+                        "height": 288,
+                        "length": 350
+                    },
+                    "description": "Forward"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/backward",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 6,
+                    "area": {
+                        "height": 288,
+                        "length": 350
+                    },
+                    "description": "Backwards"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text1",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 7,
+                    "area": {
+                        "height": 613,
+                        "length": 874
+                    },
+                    "description": "Rest"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text2",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 8,
+                    "area": {
+                        "height": 451,
+                        "length": 97
+                    },
+                    "description": "Next Exercise:"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text_exercise",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 9,
+                    "area": {
+                        "height": 382,
+                        "length": 119
+                    },
+                    "description": "Wall Sit"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text_exercise_info",
+                    "clickable": true,
+                    "class": "com.perigee.seven.ui.view.ExerciseBulletsView",
+                    "id": 10,
+                    "area": {
+                        "height": 1328,
+                        "length": 159
+                    },
+                    "children": [
+                        {
+                            "clickable": true,
+                            "class": ".widget.TextView",
+                            "id": 11,
+                            "area": {
+                                "height": 48,
+                                "length": 44
+                            },
+                            "description": "\u2022"
+                        },
+                        {
+                            "clickable": true,
+                            "class": ".widget.TextView",
+                            "id": 12,
+                            "area": {
+                                "height": 1280,
+                                "length": 79
+                            },
+                            "description": "Keep your legs shoulder width apart and a 90 degree angle on your knees."
+                        },
+                        {
+                            "clickable": true,
+                            "class": ".widget.TextView",
+                            "id": 13,
+                            "area": {
+                                "height": 48,
+                                "length": 44
+                            },
+                            "description": "\u2022"
+                        },
+                        {
+                            "clickable": true,
+                            "class": ".widget.TextView",
+                            "id": 14,
+                            "area": {
+                                "height": 1280,
+                                "length": 80
+                            },
+                            "description": "Push your feet towards the floor and your back against the wall."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/action_bar",
+            "clickable": false,
+            "class": ".support.v7.widget.Toolbar",
+            "id": 15,
+            "area": {
+                "height": 1440,
+                "length": 196
+            },
+            "children": [
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 16,
+                    "area": {
+                        "height": 501,
+                        "length": 93
+                    },
+                    "description": "Exercise 2 of 12"
+                },
+                {
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageButton",
+                    "id": 17,
+                    "area": {
+                        "height": 196,
+                        "length": 196
+                    },
+                    "description": " Exercise / Navigate up"
+                },
+                {
+                    "clickable": true,
+                    "class": ".support.v7.view.menu.ActionMenuItemView",
+                    "resource-id": "se.perigee.seven:id/action_info",
+                    "id": 18,
+                    "area": {
+                        "height": 168,
+                        "length": 196
+                    },
+                    "description": "about"
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/navigationBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 19,
+            "area": {
+                "height": 1440,
+                "length": 168
+            },
+            "description": "flash selfie"
+        },
+        {
+            "resource-id": ":id/statusBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 20,
+            "area": {
+                "height": 1440,
+                "length": 84
+            },
+            "description": " FAK 5:02"
+        }
+    ]
+}

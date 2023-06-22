@@ -128,11 +128,11 @@
             "length": 1440
         },
         "leaf-id": 0,
-        "ocr": "LUNGES30",
-        "text": "LUNGES30",
+        "ocr": "",
+        "text": "",
         "caption": "call",
         "icon-cls": "avatar",
-        "description": "LUNGES30"
+        "description": "avatar"
     },
     {
         "resource-id": "se.perigee.android.seven:id/video_overlay",
@@ -173,11 +173,11 @@
             "length": 1522
         },
         "leaf-id": 1,
-        "ocr": "LUNGES30",
-        "text": "LUNGES30",
-        "caption": "image thumbnail",
+        "ocr": " LUNGES",
+        "text": " LUNGES",
+        "caption": "online",
         "icon-cls": "avatar",
-        "description": "LUNGES30"
+        "description": " LUNGES"
     },
     {
         "text": "Lunges",
@@ -262,11 +262,11 @@
             "length": 350
         },
         "leaf-id": 3,
-        "ocr": "",
-        "text": "",
+        "ocr": " 30",
+        "text": " 30",
         "caption": "<unk>",
         "icon-cls": null,
-        "description": null
+        "description": " 30"
     },
     {
         "resource-id": "se.perigee.android.seven:id/forward",
@@ -482,11 +482,11 @@
             "length": 196
         },
         "leaf-id": 7,
-        "ocr": "Exercise 10 of 12",
-        "text": "Exercise 10 of 12",
+        "ocr": "",
+        "text": "",
         "caption": "navigate up",
         "icon-cls": "arrow_backward",
-        "description": "Exercise 10 of 12 / Navigate up"
+        "description": "Navigate up"
     },
     {
         "resource-id": "android:id/navigationBarBackground",
@@ -527,11 +527,11 @@
             "length": 168
         },
         "leaf-id": 8,
-        "ocr": "",
-        "text": "",
+        "ocr": " A",
+        "text": " A",
         "caption": "flash selfie",
         "icon-cls": null,
-        "description": "flash selfie"
+        "description": " A"
     },
     {
         "resource-id": "android:id/statusBarBackground",
@@ -572,10 +572,10 @@
             "length": 84
         },
         "leaf-id": 9,
-        "ocr": "FAK5:03",
-        "text": "FAK5:03",
+        "ocr": " fo FAK 5:03",
+        "text": " fo FAK 5:03",
         "caption": "<unk>",
         "icon-cls": null,
-        "description": "FAK5:03"
+        "description": " fo FAK 5:03"
     }
 ]

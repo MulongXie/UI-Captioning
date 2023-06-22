@@ -1,0 +1,343 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1440,
+        "length": 2560
+    },
+    "children": [
+        {
+            "clickable": false,
+            "class": ".widget.ScrollView",
+            "id": 1,
+            "area": {
+                "height": 1384,
+                "length": 2112
+            },
+            "children": [
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.CardView",
+                    "id": 2,
+                    "area": {
+                        "height": 1384,
+                        "length": 394
+                    },
+                    "children": [
+                        {
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 3,
+                            "area": {
+                                "height": 717,
+                                "length": 76
+                            },
+                            "description": "Workout summary"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/summary_workout_icon",
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 4,
+                            "area": {
+                                "height": 98,
+                                "length": 126
+                            },
+                            "description": " Full Body"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/summary_workout_name",
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 5,
+                            "area": {
+                                "height": 243,
+                                "length": 81
+                            },
+                            "description": "Full Body"
+                        },
+                        {
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 6,
+                            "area": {
+                                "height": 98,
+                                "length": 126
+                            },
+                            "description": "information"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/summary_circuits_time",
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 7,
+                            "area": {
+                                "height": 348,
+                                "length": 81
+                            },
+                            "description": "7:53 Minutes"
+                        },
+                        {
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatImageView",
+                            "id": 8,
+                            "area": {
+                                "height": 98,
+                                "length": 126
+                            },
+                            "description": "refresh"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/summary_no_of_circuits",
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 9,
+                            "area": {
+                                "height": 213,
+                                "length": 81
+                            },
+                            "description": "1 circuit"
+                        }
+                    ]
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/achievements_unlocked_card",
+                    "clickable": false,
+                    "class": ".support.v7.widget.CardView",
+                    "id": 10,
+                    "area": {
+                        "height": 1384,
+                        "length": 714
+                    },
+                    "children": [
+                        {
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 11,
+                            "area": {
+                                "height": 566,
+                                "length": 164
+                            },
+                            "description": "Achievements"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/achievements_unlocked_grid",
+                            "clickable": true,
+                            "class": "com.perigee.seven.ui.view.WrappedGridView",
+                            "id": 12,
+                            "area": {
+                                "height": 1308,
+                                "length": 495
+                            },
+                            "children": [
+                                {
+                                    "clickable": true,
+                                    "class": ".widget.LinearLayout",
+                                    "id": 13,
+                                    "area": {
+                                        "height": 462,
+                                        "length": 495
+                                    },
+                                    "children": [
+                                        {
+                                            "resource-id": "se.perigee.seven:id/image",
+                                            "clickable": true,
+                                            "class": ".support.v7.widget.AppCompatImageView",
+                                            "id": 14,
+                                            "area": {
+                                                "height": 287,
+                                                "length": 287
+                                            },
+                                            "description": " Challenge Accepted Active Calories"
+                                        },
+                                        {
+                                            "resource-id": "se.perigee.seven:id/text",
+                                            "clickable": true,
+                                            "class": ".support.v7.widget.AppCompatTextView",
+                                            "id": 15,
+                                            "area": {
+                                                "height": 350,
+                                                "length": 152
+                                            },
+                                            "description": "Challenge Accepted"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "clickable": true,
+                                    "class": ".widget.LinearLayout",
+                                    "id": 16,
+                                    "area": {
+                                        "height": 462,
+                                        "length": 495
+                                    },
+                                    "children": [
+                                        {
+                                            "resource-id": "se.perigee.seven:id/image",
+                                            "clickable": true,
+                                            "class": ".support.v7.widget.AppCompatImageView",
+                                            "id": 17,
+                                            "area": {
+                                                "height": 287,
+                                                "length": 287
+                                            }
+                                        },
+                                        {
+                                            "resource-id": "se.perigee.seven:id/text",
+                                            "clickable": true,
+                                            "class": ".support.v7.widget.AppCompatTextView",
+                                            "id": 18,
+                                            "area": {
+                                                "height": 350,
+                                                "length": 152
+                                            },
+                                            "description": "Afternoon Boost"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.CardView",
+                    "id": 19,
+                    "area": {
+                        "height": 1384,
+                        "length": 666
+                    },
+                    "children": [
+                        {
+                            "resource-id": "se.perigee.seven:id/calories_title",
+                            "clickable": false,
+                            "class": ".support.v7.widget.AppCompatTextView",
+                            "id": 20,
+                            "area": {
+                                "height": 593,
+                                "length": 164
+                            },
+                            "description": "Active Calories"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/calories_chart_view",
+                            "clickable": false,
+                            "class": "com.perigee.seven.ui.view.CaloriesGraphView",
+                            "id": 21,
+                            "area": {
+                                "height": 1308,
+                                "length": 420
+                            },
+                            "description": " Seen all the ads ? / Calories chart"
+                        },
+                        {
+                            "resource-id": "se.perigee.seven:id/graph_overlay",
+                            "clickable": true,
+                            "class": ".widget.RelativeLayout",
+                            "id": 22,
+                            "area": {
+                                "height": 1308,
+                                "length": 420
+                            },
+                            "children": [
+                                {
+                                    "clickable": true,
+                                    "class": ".support.v7.widget.AppCompatImageView",
+                                    "id": 23,
+                                    "area": {
+                                        "height": 109,
+                                        "length": 109
+                                    }
+                                },
+                                {
+                                    "clickable": true,
+                                    "class": ".support.v7.widget.AppCompatTextView",
+                                    "id": 24,
+                                    "area": {
+                                        "height": 560,
+                                        "length": 223
+                                    },
+                                    "description": "Enter your body details to track calories."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 25,
+                    "area": {
+                        "height": 1384,
+                        "length": 254
+                    }
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/action_bar",
+            "clickable": false,
+            "class": ".support.v7.widget.Toolbar",
+            "id": 26,
+            "area": {
+                "height": 1440,
+                "length": 196
+            },
+            "children": [
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 27,
+                    "area": {
+                        "height": 328,
+                        "length": 93
+                    },
+                    "description": "Well done!"
+                },
+                {
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageButton",
+                    "id": 28,
+                    "area": {
+                        "height": 196,
+                        "length": 196
+                    },
+                    "description": " Well done ! Workout Summ / Navigate up"
+                },
+                {
+                    "clickable": true,
+                    "class": ".support.v7.view.menu.ActionMenuItemView",
+                    "resource-id": "se.perigee.seven:id/action_share",
+                    "id": 29,
+                    "area": {
+                        "height": 168,
+                        "length": 196
+                    },
+                    "description": "share"
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/navigationBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 30,
+            "area": {
+                "height": 1440,
+                "length": 168
+            }
+        },
+        {
+            "resource-id": ":id/statusBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 31,
+            "area": {
+                "height": 1440,
+                "length": 84
+            },
+            "description": " FAK 5:00"
+        }
+    ]
+}

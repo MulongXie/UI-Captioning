@@ -14,9 +14,7 @@
             2560
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             0,
@@ -59,9 +57,7 @@
             2392
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             0,
@@ -83,11 +79,11 @@
             "length": 2392
         },
         "leaf-id": 0,
-        "ocr": "Initial SetupDefault period lengthThe length of your period . Usually lasts betweenanddaysStart date of your last periodDefault cycle lengthThe duration between the start dates of two periods . Usually between 23 and 35days .1030Feb2017Continue",
-        "text": "Initial SetupDefault period lengthThe length of your period . Usually lasts betweenanddaysStart date of your last periodDefault cycle lengthThe duration between the start dates of two periods . Usually between 23 and 35days .1030Feb2017Continue",
+        "ocr": " Initial Setup Default period length The length of your period . Usually lasts between and days Default cycle length The duration between the start dates of two periods . Usually between 23 and 35 days . Start date of your last period 10 30 Feb 2017 Continue",
+        "text": " Initial Setup Default period length The length of your period . Usually lasts between and days Default cycle length The duration between the start dates of two periods . Usually between 23 and 35 days . Start date of your last period 10 30 Feb 2017 Continue",
         "caption": "image thumbnail",
         "icon-cls": null,
-        "description": "Initial SetupDefault period lengthThe length of your period . Usually lasts betweenanddaysStart date of your last periodDefault cycle lengthThe duration between the start dates of two periods . Usually between 23 and 35days .1030Feb2017Continue"
+        "description": " Initial Setup Default period length The length of your period . Usually lasts between and days Default cycle length The duration between the start dates of two periods . Usually between 23 and 35 days . Start date of your last period 10 30 Feb 2017 Continue"
     },
     {
         "scrollable-horizontal": false,
@@ -104,9 +100,7 @@
             2392
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             3,
@@ -148,9 +142,7 @@
             2392
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             1,
             0,
@@ -173,11 +165,11 @@
             "length": 175
         },
         "leaf-id": 1,
-        "ocr": "",
-        "text": "",
+        "ocr": " Continue",
+        "text": " Continue",
         "caption": "<unk>",
         "icon-cls": null,
-        "description": null
+        "description": " Continue"
     },
     {
         "scrollable-horizontal": false,
@@ -194,9 +186,7 @@
             2392
         ],
         "visibility": "invisible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             1,
             0,
@@ -218,11 +208,11 @@
             "length": 175
         },
         "leaf-id": 2,
-        "ocr": "",
-        "text": "",
+        "ocr": " Continue",
+        "text": " Continue",
         "caption": "<unk>",
         "icon-cls": null,
-        "description": null
+        "description": " Continue"
     },
     {
         "resource-id": "android:id/navigationBarBackground",
@@ -230,9 +220,7 @@
         "pointer": "67895aa",
         "scrollable-horizontal": false,
         "selected": false,
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             2392,

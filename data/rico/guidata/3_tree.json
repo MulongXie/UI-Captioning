@@ -25,7 +25,7 @@
                         "height": 1440,
                         "length": 1440
                     },
-                    "description": "LUNGES30"
+                    "description": "avatar"
                 },
                 {
                     "resource-id": "se.perigee.seven:id/video_overlay",
@@ -36,7 +36,7 @@
                         "height": 1440,
                         "length": 1522
                     },
-                    "description": "LUNGES30"
+                    "description": " LUNGES"
                 },
                 {
                     "resource-id": "se.perigee.seven:id/text_exercise",
@@ -57,7 +57,8 @@
                     "area": {
                         "height": 350,
                         "length": 350
-                    }
+                    },
+                    "description": " 30"
                 },
                 {
                     "resource-id": "se.perigee.seven:id/forward",
@@ -111,7 +112,7 @@
                         "height": 196,
                         "length": 196
                     },
-                    "description": "Exercise 10 of 12 / Navigate up"
+                    "description": "Navigate up"
                 }
             ]
         },
@@ -124,7 +125,7 @@
                 "height": 1440,
                 "length": 168
             },
-            "description": "flash selfie"
+            "description": " A"
         },
         {
             "resource-id": ":id/statusBarBackground",
@@ -135,7 +136,7 @@
                 "height": 1440,
                 "length": 84
             },
-            "description": "FAK5:03"
+            "description": " fo FAK 5:03"
         }
     ]
 }

@@ -14,9 +14,7 @@
             2560
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             0,
@@ -59,9 +57,7 @@
             2214
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             0,
@@ -83,11 +79,11 @@
             "length": 2214
         },
         "leaf-id": 0,
-        "ocr": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET",
-        "text": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET",
+        "ocr": " Menstrual Cycles Menstrual Cycles Add new cycle Wednesday , February , 2017 Cycle length : Period length : 2017 EQUINOX LS ATTRACTIVE OFFERS NOW AVAILABLE Learn More CHEVROLET",
+        "text": " Menstrual Cycles Menstrual Cycles Add new cycle Wednesday , February , 2017 Cycle length : Period length : 2017 EQUINOX LS ATTRACTIVE OFFERS NOW AVAILABLE Learn More CHEVROLET",
         "caption": "image desc",
         "icon-cls": null,
-        "description": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET"
+        "description": " Menstrual Cycles Menstrual Cycles Add new cycle Wednesday , February , 2017 Cycle length : Period length : 2017 EQUINOX LS ATTRACTIVE OFFERS NOW AVAILABLE Learn More CHEVROLET"
     },
     {
         "scrollable-horizontal": false,
@@ -104,9 +100,7 @@
             2392
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             3,
@@ -148,9 +142,7 @@
             2392
         ],
         "visibility": "visible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             0,
@@ -193,9 +185,7 @@
             2392
         ],
         "visibility": "invisible",
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             1,
             0,
@@ -229,9 +219,7 @@
         "pointer": "67895aa",
         "scrollable-horizontal": false,
         "selected": false,
-        "content-desc": [
-            null
-        ],
+        "content-desc": "",
         "rel-bounds": [
             0,
             2392,

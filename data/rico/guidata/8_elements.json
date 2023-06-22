@@ -1,0 +1,1140 @@
+[
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            0,
+            1440,
+            2560
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            2560
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "d822ae6",
+        "class": "root",
+        "visible-to-user": true,
+        "id": 0,
+        "layer": 0,
+        "children-id": [
+            1,
+            21,
+            24,
+            25
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 2560
+        }
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": false,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": true,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            280,
+            1440,
+            2392
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            2112
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": true,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "1f70040",
+        "class": "android.widget.ScrollView",
+        "visible-to-user": true,
+        "id": 1,
+        "layer": 1,
+        "children-id": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            11,
+            14,
+            17,
+            20
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 2112
+        }
+    },
+    {
+        "text": "Google Fit data",
+        "resource-id": "se.perigee.android.seven:id/title",
+        "adapter-view": false,
+        "pointer": "26be06c",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            520,
+            116
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            0,
+            350,
+            520,
+            466
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 2,
+        "layer": 2,
+        "area": {
+            "height": 520,
+            "length": 116
+        },
+        "leaf-id": 0,
+        "caption": "<unk>",
+        "icon-cls": null,
+        "description": "Google Fit data"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            466,
+            1440,
+            633
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            186,
+            1440,
+            353
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "5d7a635",
+        "class": "com.perigee.seven.ui.view.CheckableRelativeLayout",
+        "visible-to-user": true,
+        "id": 3,
+        "layer": 2,
+        "children-id": [
+            4,
+            5
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 167
+        }
+    },
+    {
+        "text": "Google Fit",
+        "resource-id": "se.perigee.android.seven:id/text1",
+        "adapter-view": false,
+        "pointer": "3741aca",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            56,
+            35,
+            381,
+            132
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            56,
+            501,
+            381,
+            598
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 4,
+        "layer": 3,
+        "area": {
+            "height": 325,
+            "length": 97
+        },
+        "leaf-id": 1,
+        "caption": "go to home page",
+        "icon-cls": null,
+        "description": "Google Fit"
+    },
+    {
+        "text": "",
+        "resource-id": "se.perigee.android.seven:id/switch1",
+        "adapter-view": false,
+        "pointer": "ad5243b",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            1218,
+            36,
+            1384,
+            131
+        ],
+        "draw": false,
+        "focusable": true,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.widget.Switch",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            1218,
+            502,
+            1384,
+            597
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 5,
+        "layer": 3,
+        "area": {
+            "height": 166,
+            "length": 95
+        },
+        "leaf-id": 2,
+        "ocr": "",
+        "caption": "profile picture",
+        "icon-cls": "avatar",
+        "description": "avatar"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": false,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "text": "Enable Google Fit to sync workouts, record calories and keep body details updated.",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            633,
+            1440,
+            827
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            194
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "6970b1",
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "id": 6,
+        "layer": 2,
+        "area": {
+            "height": 1440,
+            "length": 194
+        },
+        "leaf-id": 3,
+        "caption": "banner",
+        "icon-cls": null,
+        "description": "Enable Google Fit to sync workouts, record calories and keep body details updated."
+    },
+    {
+        "text": "Body details",
+        "resource-id": "se.perigee.android.seven:id/title",
+        "adapter-view": false,
+        "pointer": "ee7c917",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            440,
+            116
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            0,
+            985,
+            440,
+            1101
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 7,
+        "layer": 2,
+        "area": {
+            "height": 440,
+            "length": 116
+        },
+        "leaf-id": 4,
+        "caption": "navigate up",
+        "icon-cls": null,
+        "description": "Body details"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            1101,
+            1440,
+            1268
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            821,
+            1440,
+            988
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "6bfd104",
+        "class": "android.widget.RelativeLayout",
+        "visible-to-user": true,
+        "id": 8,
+        "layer": 2,
+        "children-id": [
+            9,
+            10
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 167
+        }
+    },
+    {
+        "text": "Date of birth",
+        "resource-id": "se.perigee.android.seven:id/text1",
+        "adapter-view": false,
+        "pointer": "8cd3922",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            397,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            56,
+            1136,
+            453,
+            1233
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 9,
+        "layer": 3,
+        "area": {
+            "height": 397,
+            "length": 97
+        },
+        "leaf-id": 5,
+        "caption": "navigate up",
+        "icon-cls": null,
+        "description": "Date of birth"
+    },
+    {
+        "text": "February 13, 1989",
+        "resource-id": "se.perigee.android.seven:id/text2",
+        "adapter-view": false,
+        "pointer": "915dfb3",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            734,
+            0,
+            1303,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            790,
+            1136,
+            1359,
+            1233
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 10,
+        "layer": 3,
+        "area": {
+            "height": 569,
+            "length": 97
+        },
+        "leaf-id": 6,
+        "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
+        "icon-cls": null,
+        "description": "February 13, 1989"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            1268,
+            1440,
+            1435
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            988,
+            1440,
+            1155
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "feaf970",
+        "class": "android.widget.RelativeLayout",
+        "visible-to-user": true,
+        "id": 11,
+        "layer": 2,
+        "children-id": [
+            12,
+            13
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 167
+        }
+    },
+    {
+        "text": "Biological sex",
+        "resource-id": "se.perigee.android.seven:id/text1",
+        "adapter-view": false,
+        "pointer": "e29c56e",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            441,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            56,
+            1303,
+            497,
+            1400
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 12,
+        "layer": 3,
+        "area": {
+            "height": 441,
+            "length": 97
+        },
+        "leaf-id": 7,
+        "caption": "<unk>",
+        "icon-cls": null,
+        "description": "Biological sex"
+    },
+    {
+        "text": "Female",
+        "resource-id": "se.perigee.android.seven:id/text2",
+        "adapter-view": false,
+        "pointer": "304c40f",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            1069,
+            0,
+            1303,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            1125,
+            1303,
+            1359,
+            1400
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 13,
+        "layer": 3,
+        "area": {
+            "height": 234,
+            "length": 97
+        },
+        "leaf-id": 8,
+        "caption": "choose",
+        "icon-cls": null,
+        "description": "Female"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            1435,
+            1440,
+            1602
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            1155,
+            1440,
+            1322
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "f5e3c9c",
+        "class": "android.widget.RelativeLayout",
+        "visible-to-user": true,
+        "id": 14,
+        "layer": 2,
+        "children-id": [
+            15,
+            16
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 167
+        }
+    },
+    {
+        "text": "Weight",
+        "resource-id": "se.perigee.android.seven:id/text1",
+        "adapter-view": false,
+        "pointer": "4b0ca7a",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            222,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            56,
+            1470,
+            278,
+            1567
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 15,
+        "layer": 3,
+        "area": {
+            "height": 222,
+            "length": 97
+        },
+        "leaf-id": 9,
+        "caption": "insert emoticon",
+        "icon-cls": null,
+        "description": "Weight"
+    },
+    {
+        "text": "Required",
+        "resource-id": "se.perigee.android.seven:id/text2",
+        "adapter-view": false,
+        "pointer": "153922b",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            1021,
+            0,
+            1303,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            1077,
+            1470,
+            1359,
+            1567
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 16,
+        "layer": 3,
+        "area": {
+            "height": 282,
+            "length": 97
+        },
+        "leaf-id": 10,
+        "caption": "go to home page",
+        "icon-cls": null,
+        "description": "Required"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            1602,
+            1440,
+            1769
+        ],
+        "visibility": "visible",
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            1322,
+            1440,
+            1489
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "f608688",
+        "class": "android.widget.RelativeLayout",
+        "visible-to-user": true,
+        "id": 17,
+        "layer": 2,
+        "children-id": [
+            18,
+            19
+        ],
+        "children-depth": 3,
+        "area": {
+            "height": 1440,
+            "length": 167
+        }
+    },
+    {
+        "text": "Height",
+        "resource-id": "se.perigee.android.seven:id/text1",
+        "adapter-view": false,
+        "pointer": "5711446",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            210,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            56,
+            1637,
+            266,
+            1734
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 18,
+        "layer": 3,
+        "area": {
+            "height": 210,
+            "length": 97
+        },
+        "leaf-id": 11,
+        "caption": "navigate up",
+        "icon-cls": null,
+        "description": "Height"
+    },
+    {
+        "text": "Required",
+        "resource-id": "se.perigee.android.seven:id/text2",
+        "adapter-view": false,
+        "pointer": "9772607",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            1021,
+            0,
+            1303,
+            97
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            1077,
+            1637,
+            1359,
+            1734
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 19,
+        "layer": 3,
+        "area": {
+            "height": 282,
+            "length": 97
+        },
+        "leaf-id": 12,
+        "caption": "go to home page",
+        "icon-cls": null,
+        "description": "Required"
+    },
+    {
+        "text": "All body details are required to track calories.",
+        "resource-id": "se.perigee.android.seven:id/text_footer",
+        "adapter-view": false,
+        "pointer": "9561ba3",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            70
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            0,
+            1836,
+            1440,
+            1906
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 20,
+        "layer": 2,
+        "area": {
+            "height": 1440,
+            "length": 70
+        },
+        "leaf-id": 13,
+        "caption": "<unk>",
+        "icon-cls": null,
+        "description": "All body details are required to track calories."
+    },
+    {
+        "resource-id": "se.perigee.android.seven:id/action_bar",
+        "adapter-view": false,
+        "pointer": "7f37a59",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            196
+        ],
+        "draw": true,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.Toolbar",
+        "visible-to-user": true,
+        "package": "se.perigee.android.seven",
+        "enabled": true,
+        "bounds": [
+            0,
+            84,
+            1440,
+            280
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 21,
+        "layer": 1,
+        "children-id": [
+            22,
+            23
+        ],
+        "children-depth": 2,
+        "area": {
+            "height": 1440,
+            "length": 196
+        }
+    },
+    {
+        "text": "Google Fit",
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "pointer": "bc8661e",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            252,
+            51,
+            572,
+            144
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "font-family": "sans-serif-medium",
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "enabled": true,
+        "bounds": [
+            252,
+            135,
+            572,
+            228
+        ],
+        "pressed": "not_pressed",
+        "id": 22,
+        "layer": 2,
+        "area": {
+            "height": 320,
+            "length": 93
+        },
+        "leaf-id": 14,
+        "caption": "navigate up",
+        "icon-cls": null,
+        "description": "Google Fit"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": false,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": true,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            84,
+            196,
+            280
+        ],
+        "visibility": "visible",
+        "content-desc": "Navigate up",
+        "rel-bounds": [
+            0,
+            0,
+            196,
+            196
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "ca4ceff",
+        "class": "android.support.v7.widget.AppCompatImageButton",
+        "visible-to-user": true,
+        "id": 23,
+        "layer": 2,
+        "area": {
+            "height": 196,
+            "length": 196
+        },
+        "leaf-id": 15,
+        "ocr": " Google Fit Google Fit data",
+        "text": " Google Fit Google Fit data",
+        "caption": "navigate up",
+        "icon-cls": "arrow_backward",
+        "description": " Google Fit Google Fit data / Navigate up"
+    },
+    {
+        "resource-id": "android:id/navigationBarBackground",
+        "adapter-view": false,
+        "pointer": "210c62a",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            2392,
+            1440,
+            2560
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.view.View",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            0,
+            2392,
+            1440,
+            2560
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 24,
+        "layer": 1,
+        "area": {
+            "height": 1440,
+            "length": 168
+        },
+        "leaf-id": 16,
+        "ocr": "",
+        "text": "",
+        "caption": "flash selfie",
+        "icon-cls": null,
+        "description": "flash selfie"
+    },
+    {
+        "resource-id": "android:id/statusBarBackground",
+        "adapter-view": false,
+        "pointer": "c015c1b",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": "",
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            84
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.view.View",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            0,
+            0,
+            1440,
+            84
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 25,
+        "layer": 1,
+        "area": {
+            "height": 1440,
+            "length": 84
+        },
+        "leaf-id": 17,
+        "ocr": " FAK 5:01",
+        "text": " FAK 5:01",
+        "caption": "<unk>",
+        "icon-cls": null,
+        "description": " FAK 5:01"
+    }
+]
