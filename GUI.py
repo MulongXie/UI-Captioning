@@ -61,7 +61,7 @@ class GUI:
     *** UI Info Extraction ***
     **************************
     '''
-    def ui_info_extraction(self):
+    def ui_info_extraction(self, remove_top_bottom_bars=True):
         '''
         Extract elements from raw view hierarchy Json file and store them as dictionaries
         => self.elements; self.elements_leaves
@@ -71,7 +71,7 @@ class GUI:
         element_root = json_cp['activity']['root']
         element_root['class'] = 'root'
         # clean up the json tree to remove redundant layout node
-        self.prone_invalid_children(element_root)
+        self.prone_invalid_children(element_root, remove_bars=remove_top_bottom_bars)
         self.remove_redundant_nesting(element_root)
         self.merge_element_with_single_leaf_child(element_root)
         self.extract_children_elements(element_root, 0)
@@ -80,18 +80,18 @@ class GUI:
         # json.dump(self.elements, open(self.output_file_path_elements, 'w', encoding='utf-8'), indent=4)
         # print('Save elements to', self.output_file_path_elements)
 
-    def prone_invalid_children(self, element):
+    def prone_invalid_children(self, element, remove_bars=True):
         '''
         Prone invalid children elements
         Leave valid children and prone their children recursively
         Take invalid children's children as its own directly
+        (Optional) Remove top and bottom bars
         '''
         def check_if_element_valid(ele, min_length=5):
             '''
             Check if the element is valid and should be kept
             '''
-            if (ele['bounds'][0] >= ele['bounds'][2] - min_length or ele['bounds'][1] >= ele['bounds'][
-                3] - min_length) or \
+            if (ele['bounds'][0] >= ele['bounds'][2] - min_length or ele['bounds'][1] >= ele['bounds'][3] - min_length) or \
                     ('layout' in ele['class'].lower() and not ele['clickable']):
                 return False
             return True
@@ -99,6 +99,15 @@ class GUI:
         valid_children = []
         if 'children' in element:
             for child in element['children']:
+                # remove bars
+                if remove_bars:
+                    screen_height, screen_width = self.img.shape[:2]
+                    bounds = child['bounds']
+                    width = bounds[2] - bounds[0]
+                    if width / screen_width > 0.95 and \
+                            ((bounds[1] / screen_height > 0.9 and bounds[3] == screen_height) or (bounds[3] / screen_height < 0.05 and bounds[1] == 0)):
+                        continue
+                # check invalid elements
                 if check_if_element_valid(child):
                     valid_children.append(child)
                     self.prone_invalid_children(child)

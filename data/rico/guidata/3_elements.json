@@ -33,9 +33,7 @@
         "layer": 0,
         "children-id": [
             1,
-            8,
-            11,
-            12
+            8
         ],
         "children-depth": 2,
         "area": {
@@ -487,95 +485,5 @@
         "caption": "navigate up",
         "icon-cls": "arrow_backward",
         "description": "Navigate up"
-    },
-    {
-        "resource-id": "android:id/navigationBarBackground",
-        "adapter-view": false,
-        "pointer": "c1fcacc",
-        "scrollable-horizontal": false,
-        "selected": false,
-        "content-desc": "",
-        "rel-bounds": [
-            0,
-            2392,
-            1440,
-            2560
-        ],
-        "draw": false,
-        "focusable": false,
-        "long-clickable": false,
-        "visibility": "visible",
-        "focused": false,
-        "clickable": false,
-        "abs-pos": true,
-        "class": "android.view.View",
-        "visible-to-user": true,
-        "package": "android",
-        "enabled": true,
-        "bounds": [
-            0,
-            2392,
-            1440,
-            2560
-        ],
-        "pressed": "not_pressed",
-        "scrollable-vertical": false,
-        "id": 11,
-        "layer": 1,
-        "area": {
-            "height": 1440,
-            "length": 168
-        },
-        "leaf-id": 8,
-        "ocr": " A",
-        "text": " A",
-        "caption": "flash selfie",
-        "icon-cls": null,
-        "description": " A"
-    },
-    {
-        "resource-id": "android:id/statusBarBackground",
-        "adapter-view": false,
-        "pointer": "f1bb115",
-        "scrollable-horizontal": false,
-        "selected": false,
-        "content-desc": "",
-        "rel-bounds": [
-            0,
-            0,
-            1440,
-            84
-        ],
-        "draw": false,
-        "focusable": false,
-        "long-clickable": false,
-        "visibility": "visible",
-        "focused": false,
-        "clickable": false,
-        "abs-pos": true,
-        "class": "android.view.View",
-        "visible-to-user": true,
-        "package": "android",
-        "enabled": true,
-        "bounds": [
-            0,
-            0,
-            1440,
-            84
-        ],
-        "pressed": "not_pressed",
-        "scrollable-vertical": false,
-        "id": 12,
-        "layer": 1,
-        "area": {
-            "height": 1440,
-            "length": 84
-        },
-        "leaf-id": 9,
-        "ocr": " fo FAK 5:03",
-        "text": " fo FAK 5:03",
-        "caption": "<unk>",
-        "icon-cls": null,
-        "description": " fo FAK 5:03"
     }
 ]

@@ -115,28 +115,6 @@
                     "description": "Navigate up"
                 }
             ]
-        },
-        {
-            "resource-id": ":id/navigationBarBackground",
-            "clickable": false,
-            "class": ".view.View",
-            "id": 11,
-            "area": {
-                "height": 1440,
-                "length": 168
-            },
-            "description": " A"
-        },
-        {
-            "resource-id": ":id/statusBarBackground",
-            "clickable": false,
-            "class": ".view.View",
-            "id": 12,
-            "area": {
-                "height": 1440,
-                "length": 84
-            },
-            "description": " fo FAK 5:03"
         }
     ]
 }
