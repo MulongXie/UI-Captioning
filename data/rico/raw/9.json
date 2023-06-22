@@ -1,0 +1,903 @@
+{
+  "activity_name": "se.perigee.android.seven/com.perigee.seven.ui.activity.WorkoutSessionCompleteActivity", 
+  "activity": {
+    "root": {
+      "scrollable-horizontal": false, 
+      "draw": false, 
+      "ancestors": [
+        "android.widget.FrameLayout", 
+        "android.view.ViewGroup", 
+        "android.view.View", 
+        "java.lang.Object"
+      ], 
+      "clickable": false, 
+      "pressed": "not_pressed", 
+      "focusable": false, 
+      "long-clickable": false, 
+      "enabled": true, 
+      "bounds": [
+        160, 
+        567, 
+        1280, 
+        1909
+      ], 
+      "visibility": "visible", 
+      "content-desc": [
+        null
+      ], 
+      "rel-bounds": [
+        0, 
+        0, 
+        1120, 
+        1342
+      ], 
+      "focused": false, 
+      "selected": false, 
+      "scrollable-vertical": false, 
+      "children": [
+        {
+          "scrollable-horizontal": false, 
+          "draw": true, 
+          "ancestors": [
+            "android.view.ViewGroup", 
+            "android.view.View", 
+            "java.lang.Object"
+          ], 
+          "clickable": false, 
+          "pressed": "not_pressed", 
+          "focusable": false, 
+          "long-clickable": false, 
+          "enabled": true, 
+          "bounds": [
+            160, 
+            567, 
+            1280, 
+            1909
+          ], 
+          "visibility": "visible", 
+          "content-desc": [
+            null
+          ], 
+          "rel-bounds": [
+            0, 
+            0, 
+            1120, 
+            1342
+          ], 
+          "focused": false, 
+          "selected": false, 
+          "scrollable-vertical": false, 
+          "children": [
+            {
+              "resource-id": "android:id/content", 
+              "adapter-view": false, 
+              "pointer": "220b15f", 
+              "children": [
+                {
+                  "scrollable-horizontal": false, 
+                  "draw": true, 
+                  "ancestors": [
+                    "android.view.ViewGroup", 
+                    "android.view.View", 
+                    "java.lang.Object"
+                  ], 
+                  "clickable": false, 
+                  "pressed": "not_pressed", 
+                  "focusable": false, 
+                  "long-clickable": false, 
+                  "enabled": true, 
+                  "bounds": [
+                    160, 
+                    567, 
+                    1280, 
+                    1909
+                  ], 
+                  "visibility": "visible", 
+                  "content-desc": [
+                    null
+                  ], 
+                  "rel-bounds": [
+                    0, 
+                    0, 
+                    1120, 
+                    1342
+                  ], 
+                  "focused": false, 
+                  "selected": false, 
+                  "scrollable-vertical": false, 
+                  "children": [
+                    {
+                      "scrollable-horizontal": false, 
+                      "draw": true, 
+                      "ancestors": [
+                        "android.view.ViewGroup", 
+                        "android.view.View", 
+                        "java.lang.Object"
+                      ], 
+                      "clickable": false, 
+                      "pressed": "not_pressed", 
+                      "focusable": false, 
+                      "long-clickable": false, 
+                      "enabled": true, 
+                      "bounds": [
+                        160, 
+                        567, 
+                        1280, 
+                        742
+                      ], 
+                      "visibility": "visible", 
+                      "content-desc": [
+                        null
+                      ], 
+                      "rel-bounds": [
+                        0, 
+                        0, 
+                        1120, 
+                        175
+                      ], 
+                      "focused": false, 
+                      "selected": false, 
+                      "scrollable-vertical": false, 
+                      "children": [
+                        {
+                          "scrollable-horizontal": false, 
+                          "draw": false, 
+                          "ancestors": [
+                            "java.lang.Object"
+                          ], 
+                          "clickable": false, 
+                          "pressed": "not_pressed", 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "enabled": true, 
+                          "bounds": [
+                            300, 
+                            590, 
+                            1140, 
+                            742
+                          ], 
+                          "visibility": "visible", 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            140, 
+                            23, 
+                            980, 
+                            175
+                          ], 
+                          "focused": false, 
+                          "selected": false, 
+                          "scrollable-vertical": false, 
+                          "adapter-view": false, 
+                          "abs-pos": true, 
+                          "pointer": "5c6540a", 
+                          "class": "android.view.View", 
+                          "visible-to-user": true
+                        }, 
+                        {
+                          "resource-id": "se.perigee.android.seven:id/banner_left", 
+                          "adapter-view": false, 
+                          "pointer": "cc9047b", 
+                          "scrollable-horizontal": false, 
+                          "ancestors": [
+                            "android.widget.ImageView", 
+                            "android.view.View", 
+                            "java.lang.Object"
+                          ], 
+                          "selected": false, 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            0, 
+                            0, 
+                            203, 
+                            175
+                          ], 
+                          "draw": false, 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "visibility": "visible", 
+                          "focused": false, 
+                          "clickable": false, 
+                          "abs-pos": true, 
+                          "class": "android.support.v7.widget.AppCompatImageView", 
+                          "visible-to-user": true, 
+                          "package": "se.perigee.android.seven", 
+                          "enabled": true, 
+                          "bounds": [
+                            160, 
+                            567, 
+                            363, 
+                            742
+                          ], 
+                          "pressed": "not_pressed", 
+                          "scrollable-vertical": false
+                        }, 
+                        {
+                          "resource-id": "se.perigee.android.seven:id/banner_right", 
+                          "adapter-view": false, 
+                          "pointer": "3169298", 
+                          "scrollable-horizontal": false, 
+                          "ancestors": [
+                            "android.widget.ImageView", 
+                            "android.view.View", 
+                            "java.lang.Object"
+                          ], 
+                          "selected": false, 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            917, 
+                            0, 
+                            1120, 
+                            175
+                          ], 
+                          "draw": false, 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "visibility": "visible", 
+                          "focused": false, 
+                          "clickable": false, 
+                          "abs-pos": true, 
+                          "class": "android.support.v7.widget.AppCompatImageView", 
+                          "visible-to-user": true, 
+                          "package": "se.perigee.android.seven", 
+                          "enabled": true, 
+                          "bounds": [
+                            1077, 
+                            567, 
+                            1280, 
+                            742
+                          ], 
+                          "pressed": "not_pressed", 
+                          "scrollable-vertical": false
+                        }, 
+                        {
+                          "text": "Congratulations!", 
+                          "resource-id": "se.perigee.android.seven:id/ach_dialog_title", 
+                          "adapter-view": false, 
+                          "pointer": "ad6eaf1", 
+                          "scrollable-horizontal": false, 
+                          "ancestors": [
+                            "android.widget.TextView", 
+                            "android.view.View", 
+                            "java.lang.Object"
+                          ], 
+                          "selected": false, 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            0, 
+                            24, 
+                            1120, 
+                            175
+                          ], 
+                          "draw": false, 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "visibility": "visible", 
+                          "focused": false, 
+                          "clickable": false, 
+                          "abs-pos": true, 
+                          "font-family": "sans-serif", 
+                          "class": "android.support.v7.widget.AppCompatTextView", 
+                          "visible-to-user": true, 
+                          "package": "se.perigee.android.seven", 
+                          "enabled": true, 
+                          "bounds": [
+                            160, 
+                            591, 
+                            1280, 
+                            742
+                          ], 
+                          "pressed": "not_pressed", 
+                          "scrollable-vertical": false
+                        }
+                      ], 
+                      "adapter-view": false, 
+                      "abs-pos": true, 
+                      "pointer": "a15fc75", 
+                      "class": "android.widget.RelativeLayout", 
+                      "visible-to-user": true
+                    }, 
+                    {
+                      "scrollable-horizontal": false, 
+                      "draw": true, 
+                      "ancestors": [
+                        "android.view.ViewGroup", 
+                        "android.view.View", 
+                        "java.lang.Object"
+                      ], 
+                      "clickable": false, 
+                      "pressed": "not_pressed", 
+                      "focusable": false, 
+                      "long-clickable": false, 
+                      "enabled": true, 
+                      "bounds": [
+                        225, 
+                        739, 
+                        1215, 
+                        1909
+                      ], 
+                      "visibility": "visible", 
+                      "content-desc": [
+                        null
+                      ], 
+                      "rel-bounds": [
+                        65, 
+                        172, 
+                        1055, 
+                        1342
+                      ], 
+                      "focused": false, 
+                      "selected": false, 
+                      "scrollable-vertical": false, 
+                      "children": [
+                        {
+                          "scrollable-horizontal": false, 
+                          "draw": true, 
+                          "ancestors": [
+                            "android.view.ViewGroup", 
+                            "android.view.View", 
+                            "java.lang.Object"
+                          ], 
+                          "clickable": false, 
+                          "pressed": "not_pressed", 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "enabled": true, 
+                          "bounds": [
+                            225, 
+                            739, 
+                            1215, 
+                            1664
+                          ], 
+                          "visibility": "visible", 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            0, 
+                            0, 
+                            990, 
+                            925
+                          ], 
+                          "focused": false, 
+                          "selected": false, 
+                          "scrollable-vertical": false, 
+                          "children": [
+                            {
+                              "resource-id": "se.perigee.android.seven:id/pocal_top_margin", 
+                              "adapter-view": false, 
+                              "pointer": "d2e4044", 
+                              "scrollable-horizontal": false, 
+                              "ancestors": [
+                                "java.lang.Object"
+                              ], 
+                              "selected": false, 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                0, 
+                                0, 
+                                0, 
+                                0
+                              ], 
+                              "draw": false, 
+                              "focusable": false, 
+                              "long-clickable": false, 
+                              "visibility": "gone", 
+                              "focused": false, 
+                              "clickable": false, 
+                              "abs-pos": true, 
+                              "class": "android.view.View", 
+                              "visible-to-user": false, 
+                              "package": "se.perigee.android.seven", 
+                              "enabled": true, 
+                              "bounds": [
+                                225, 
+                                739, 
+                                225, 
+                                739
+                              ], 
+                              "pressed": "not_pressed", 
+                              "scrollable-vertical": false
+                            }, 
+                            {
+                              "scrollable-horizontal": false, 
+                              "draw": true, 
+                              "ancestors": [
+                                "android.view.ViewGroup", 
+                                "android.view.View", 
+                                "java.lang.Object"
+                              ], 
+                              "clickable": false, 
+                              "pressed": "not_pressed", 
+                              "focusable": false, 
+                              "long-clickable": false, 
+                              "enabled": true, 
+                              "bounds": [
+                                382, 
+                                739, 
+                                1058, 
+                                1415
+                              ], 
+                              "visibility": "visible", 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                157, 
+                                0, 
+                                833, 
+                                676
+                              ], 
+                              "focused": false, 
+                              "selected": false, 
+                              "scrollable-vertical": false, 
+                              "children": [
+                                {
+                                  "resource-id": "se.perigee.android.seven:id/achievement_image", 
+                                  "adapter-view": false, 
+                                  "pointer": "1855a62", 
+                                  "scrollable-horizontal": false, 
+                                  "ancestors": [
+                                    "android.widget.ImageView", 
+                                    "android.view.View", 
+                                    "java.lang.Object"
+                                  ], 
+                                  "selected": false, 
+                                  "content-desc": [
+                                    null
+                                  ], 
+                                  "rel-bounds": [
+                                    0, 
+                                    0, 
+                                    676, 
+                                    676
+                                  ], 
+                                  "draw": false, 
+                                  "focusable": false, 
+                                  "long-clickable": false, 
+                                  "visibility": "visible", 
+                                  "focused": false, 
+                                  "clickable": false, 
+                                  "abs-pos": true, 
+                                  "class": "android.support.v7.widget.AppCompatImageView", 
+                                  "visible-to-user": true, 
+                                  "package": "se.perigee.android.seven", 
+                                  "enabled": true, 
+                                  "bounds": [
+                                    382, 
+                                    739, 
+                                    1058, 
+                                    1415
+                                  ], 
+                                  "pressed": "not_pressed", 
+                                  "scrollable-vertical": false
+                                }, 
+                                {
+                                  "resource-id": "se.perigee.android.seven:id/achievement_image_lock", 
+                                  "adapter-view": false, 
+                                  "pointer": "11d87f3", 
+                                  "scrollable-horizontal": false, 
+                                  "ancestors": [
+                                    "android.widget.ImageView", 
+                                    "android.view.View", 
+                                    "java.lang.Object"
+                                  ], 
+                                  "selected": false, 
+                                  "content-desc": [
+                                    null
+                                  ], 
+                                  "rel-bounds": [
+                                    0, 
+                                    0, 
+                                    0, 
+                                    0
+                                  ], 
+                                  "draw": false, 
+                                  "focusable": false, 
+                                  "long-clickable": false, 
+                                  "visibility": "gone", 
+                                  "focused": false, 
+                                  "clickable": false, 
+                                  "abs-pos": true, 
+                                  "class": "android.support.v7.widget.AppCompatImageView", 
+                                  "visible-to-user": false, 
+                                  "package": "se.perigee.android.seven", 
+                                  "enabled": true, 
+                                  "bounds": [
+                                    382, 
+                                    739, 
+                                    382, 
+                                    739
+                                  ], 
+                                  "pressed": "not_pressed", 
+                                  "scrollable-vertical": false
+                                }, 
+                                {
+                                  "text": "", 
+                                  "resource-id": "se.perigee.android.seven:id/pocal_label", 
+                                  "adapter-view": false, 
+                                  "pointer": "1f11cb0", 
+                                  "scrollable-horizontal": false, 
+                                  "ancestors": [
+                                    "android.widget.TextView", 
+                                    "android.view.View", 
+                                    "java.lang.Object"
+                                  ], 
+                                  "selected": false, 
+                                  "content-desc": [
+                                    null
+                                  ], 
+                                  "rel-bounds": [
+                                    0, 
+                                    0, 
+                                    0, 
+                                    0
+                                  ], 
+                                  "draw": false, 
+                                  "focusable": false, 
+                                  "long-clickable": false, 
+                                  "visibility": "gone", 
+                                  "focused": false, 
+                                  "clickable": false, 
+                                  "abs-pos": true, 
+                                  "font-family": "sans-serif", 
+                                  "class": "android.support.v7.widget.AppCompatTextView", 
+                                  "visible-to-user": false, 
+                                  "package": "se.perigee.android.seven", 
+                                  "enabled": true, 
+                                  "bounds": [
+                                    382, 
+                                    739, 
+                                    382, 
+                                    739
+                                  ], 
+                                  "pressed": "not_pressed", 
+                                  "scrollable-vertical": false
+                                }
+                              ], 
+                              "adapter-view": false, 
+                              "abs-pos": true, 
+                              "pointer": "cde452d", 
+                              "class": "android.widget.RelativeLayout", 
+                              "visible-to-user": true
+                            }, 
+                            {
+                              "text": "Afternoon Boost", 
+                              "resource-id": "se.perigee.android.seven:id/achievement_title", 
+                              "adapter-view": false, 
+                              "pointer": "a870729", 
+                              "scrollable-horizontal": false, 
+                              "ancestors": [
+                                "android.widget.TextView", 
+                                "android.view.View", 
+                                "java.lang.Object"
+                              ], 
+                              "selected": false, 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                56, 
+                                676, 
+                                934, 
+                                773
+                              ], 
+                              "draw": false, 
+                              "focusable": false, 
+                              "long-clickable": false, 
+                              "visibility": "visible", 
+                              "focused": false, 
+                              "clickable": false, 
+                              "abs-pos": true, 
+                              "class": "android.support.v7.widget.AppCompatTextView", 
+                              "visible-to-user": true, 
+                              "package": "se.perigee.android.seven", 
+                              "enabled": true, 
+                              "bounds": [
+                                281, 
+                                1415, 
+                                1159, 
+                                1512
+                              ], 
+                              "pressed": "not_pressed", 
+                              "scrollable-vertical": false
+                            }, 
+                            {
+                              "text": "Do a workout between 12 and 4 in the afternoon.", 
+                              "resource-id": "se.perigee.android.seven:id/achievement_desc", 
+                              "adapter-view": false, 
+                              "pointer": "262baae", 
+                              "scrollable-horizontal": false, 
+                              "ancestors": [
+                                "android.widget.TextView", 
+                                "android.view.View", 
+                                "java.lang.Object"
+                              ], 
+                              "selected": false, 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                56, 
+                                773, 
+                                934, 
+                                925
+                              ], 
+                              "draw": false, 
+                              "focusable": false, 
+                              "long-clickable": false, 
+                              "visibility": "visible", 
+                              "focused": false, 
+                              "clickable": false, 
+                              "abs-pos": true, 
+                              "class": "android.support.v7.widget.AppCompatTextView", 
+                              "visible-to-user": true, 
+                              "package": "se.perigee.android.seven", 
+                              "enabled": true, 
+                              "bounds": [
+                                281, 
+                                1512, 
+                                1159, 
+                                1664
+                              ], 
+                              "pressed": "not_pressed", 
+                              "scrollable-vertical": false
+                            }
+                          ], 
+                          "adapter-view": false, 
+                          "abs-pos": true, 
+                          "pointer": "dd96d57", 
+                          "class": "android.widget.LinearLayout", 
+                          "visible-to-user": true
+                        }, 
+                        {
+                          "resource-id": "se.perigee.android.seven:id/dialog_buttons", 
+                          "adapter-view": false, 
+                          "pointer": "97eb04f", 
+                          "children": [
+                            {
+                              "text": "Share", 
+                              "resource-id": "se.perigee.android.seven:id/button_share", 
+                              "adapter-view": false, 
+                              "pointer": "c353dc", 
+                              "scrollable-horizontal": false, 
+                              "ancestors": [
+                                "android.widget.Button", 
+                                "android.widget.TextView", 
+                                "android.view.View", 
+                                "java.lang.Object"
+                              ], 
+                              "selected": false, 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                0, 
+                                0, 
+                                312, 
+                                210
+                              ], 
+                              "draw": false, 
+                              "focusable": true, 
+                              "long-clickable": false, 
+                              "visibility": "visible", 
+                              "focused": false, 
+                              "clickable": true, 
+                              "abs-pos": true, 
+                              "font-family": "sans-serif-medium", 
+                              "class": "android.support.v7.widget.AppCompatButton", 
+                              "visible-to-user": true, 
+                              "package": "se.perigee.android.seven", 
+                              "enabled": true, 
+                              "bounds": [
+                                225, 
+                                1699, 
+                                537, 
+                                1909
+                              ], 
+                              "pressed": "not_pressed", 
+                              "scrollable-vertical": false
+                            }, 
+                            {
+                              "text": "Close", 
+                              "resource-id": "se.perigee.android.seven:id/button_ok", 
+                              "adapter-view": false, 
+                              "pointer": "edfece5", 
+                              "scrollable-horizontal": false, 
+                              "ancestors": [
+                                "android.widget.Button", 
+                                "android.widget.TextView", 
+                                "android.view.View", 
+                                "java.lang.Object"
+                              ], 
+                              "selected": false, 
+                              "content-desc": [
+                                null
+                              ], 
+                              "rel-bounds": [
+                                686, 
+                                0, 
+                                990, 
+                                210
+                              ], 
+                              "draw": false, 
+                              "focusable": true, 
+                              "long-clickable": false, 
+                              "visibility": "visible", 
+                              "focused": false, 
+                              "clickable": true, 
+                              "abs-pos": true, 
+                              "font-family": "sans-serif-medium", 
+                              "class": "android.support.v7.widget.AppCompatButton", 
+                              "visible-to-user": true, 
+                              "package": "se.perigee.android.seven", 
+                              "enabled": true, 
+                              "bounds": [
+                                911, 
+                                1699, 
+                                1215, 
+                                1909
+                              ], 
+                              "pressed": "not_pressed", 
+                              "scrollable-vertical": false
+                            }
+                          ], 
+                          "scrollable-horizontal": false, 
+                          "ancestors": [
+                            "android.view.ViewGroup", 
+                            "android.view.View", 
+                            "java.lang.Object"
+                          ], 
+                          "selected": false, 
+                          "content-desc": [
+                            null
+                          ], 
+                          "rel-bounds": [
+                            0, 
+                            960, 
+                            990, 
+                            1170
+                          ], 
+                          "draw": true, 
+                          "focusable": false, 
+                          "long-clickable": false, 
+                          "visibility": "visible", 
+                          "focused": false, 
+                          "clickable": false, 
+                          "abs-pos": true, 
+                          "class": "android.widget.RelativeLayout", 
+                          "visible-to-user": true, 
+                          "package": "se.perigee.android.seven", 
+                          "enabled": true, 
+                          "bounds": [
+                            225, 
+                            1699, 
+                            1215, 
+                            1909
+                          ], 
+                          "pressed": "not_pressed", 
+                          "scrollable-vertical": false
+                        }
+                      ], 
+                      "adapter-view": false, 
+                      "abs-pos": true, 
+                      "pointer": "7da6d6", 
+                      "class": "android.widget.LinearLayout", 
+                      "visible-to-user": true
+                    }
+                  ], 
+                  "adapter-view": false, 
+                  "abs-pos": true, 
+                  "pointer": "c70a7ac", 
+                  "class": "android.widget.LinearLayout", 
+                  "visible-to-user": true
+                }
+              ], 
+              "scrollable-horizontal": false, 
+              "ancestors": [
+                "android.view.ViewGroup", 
+                "android.view.View", 
+                "java.lang.Object"
+              ], 
+              "selected": false, 
+              "content-desc": [
+                null
+              ], 
+              "rel-bounds": [
+                0, 
+                0, 
+                1120, 
+                1342
+              ], 
+              "draw": true, 
+              "focusable": false, 
+              "long-clickable": false, 
+              "visibility": "visible", 
+              "focused": false, 
+              "clickable": false, 
+              "abs-pos": true, 
+              "class": "android.widget.FrameLayout", 
+              "visible-to-user": true, 
+              "package": "android", 
+              "enabled": true, 
+              "bounds": [
+                160, 
+                567, 
+                1280, 
+                1909
+              ], 
+              "pressed": "not_pressed", 
+              "scrollable-vertical": false
+            }, 
+            {
+              "resource-id": "android:id/action_mode_bar_stub", 
+              "adapter-view": false, 
+              "pointer": "da3d3ba", 
+              "scrollable-horizontal": false, 
+              "ancestors": [
+                "android.view.View", 
+                "java.lang.Object"
+              ], 
+              "selected": false, 
+              "content-desc": [
+                null
+              ], 
+              "rel-bounds": [
+                0, 
+                0, 
+                0, 
+                0
+              ], 
+              "draw": true, 
+              "focusable": false, 
+              "long-clickable": false, 
+              "visibility": "gone", 
+              "focused": false, 
+              "clickable": false, 
+              "abs-pos": true, 
+              "class": "android.view.ViewStub", 
+              "visible-to-user": false, 
+              "package": "android", 
+              "enabled": true, 
+              "bounds": [
+                160, 
+                567, 
+                160, 
+                567
+              ], 
+              "pressed": "not_pressed", 
+              "scrollable-vertical": false
+            }
+          ], 
+          "adapter-view": false, 
+          "abs-pos": true, 
+          "pointer": "5d6d5fe", 
+          "class": "android.widget.FrameLayout", 
+          "visible-to-user": true
+        }
+      ], 
+      "adapter-view": false, 
+      "abs-pos": true, 
+      "pointer": "9383db9", 
+      "class": "com.android.internal.policy.PhoneWindow$DecorView", 
+      "visible-to-user": true
+    }, 
+    "added_fragments": [
+      "1"
+    ], 
+    "active_fragments": [
+      "1"
+    ]
+  }, 
+  "is_keyboard_deployed": false, 
+  "request_id": "103"
+}

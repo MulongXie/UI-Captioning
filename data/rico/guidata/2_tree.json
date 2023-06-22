@@ -1,0 +1,92 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1256,
+        "length": 1715
+    },
+    "children": [
+        {
+            "clickable": false,
+            "class": ".widget.DatePicker",
+            "id": 1,
+            "area": {
+                "height": 1144,
+                "length": 1407
+            },
+            "children": [
+                {
+                    "resource-id": ":id/date_picker_header_year",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 2,
+                    "area": {
+                        "height": 976,
+                        "length": 142
+                    },
+                    "description": "1990"
+                },
+                {
+                    "resource-id": ":id/date_picker_header_date",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 3,
+                    "area": {
+                        "height": 555,
+                        "length": 159
+                    },
+                    "description": "Fri, Jun 15"
+                },
+                {
+                    "resource-id": ":id/month_view",
+                    "clickable": false,
+                    "class": ".widget.SimpleMonthView",
+                    "id": 4,
+                    "area": {
+                        "height": 1144,
+                        "length": 1043
+                    },
+                    "description": "14151617181910111213212223242829303125262027DONEedededed"
+                },
+                {
+                    "resource-id": ":id/prev",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageButton",
+                    "id": 5,
+                    "area": {
+                        "height": 168,
+                        "length": 168
+                    },
+                    "description": [
+                        "Previous month"
+                    ]
+                },
+                {
+                    "resource-id": ":id/next",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageButton",
+                    "id": 6,
+                    "area": {
+                        "height": 168,
+                        "length": 168
+                    },
+                    "description": [
+                        "Next month"
+                    ]
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/button1",
+            "clickable": true,
+            "class": ".support.v7.widget.AppCompatButton",
+            "id": 7,
+            "area": {
+                "height": 232,
+                "length": 168
+            },
+            "description": "Done"
+        }
+    ]
+}

@@ -1,0 +1,379 @@
+[
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            92,
+            380,
+            1348,
+            2095
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            0,
+            1256,
+            1715
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "a35b8df",
+        "class": "root",
+        "visible-to-user": true,
+        "id": 0,
+        "layer": 0,
+        "children-id": [
+            1,
+            7
+        ],
+        "children-depth": 2,
+        "area": {
+            "height": 1256,
+            "length": 1715
+        }
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            148,
+            436,
+            1292,
+            1843
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            0,
+            1144,
+            1407
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "aa497cf",
+        "class": "android.widget.DatePicker",
+        "visible-to-user": true,
+        "id": 1,
+        "layer": 1,
+        "children-id": [
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "children-depth": 2,
+        "area": {
+            "height": 1144,
+            "length": 1407
+        }
+    },
+    {
+        "text": "1990",
+        "resource-id": "android:id/date_picker_header_year",
+        "adapter-view": false,
+        "pointer": "cf2813a",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            84,
+            0,
+            1060,
+            142
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "font-family": "sans-serif-medium",
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            232,
+            436,
+            1208,
+            578
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 2,
+        "layer": 2,
+        "area": {
+            "height": 976,
+            "length": 142
+        },
+        "leaf-id": 0,
+        "caption": "the secret affirmation daily",
+        "icon-cls": null,
+        "description": "1990"
+    },
+    {
+        "text": "Fri, Jun 15",
+        "resource-id": "android:id/date_picker_header_date",
+        "adapter-view": false,
+        "pointer": "37ce1eb",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            84,
+            142,
+            639,
+            301
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "font-family": "sans-serif-medium",
+        "class": "android.support.v7.widget.AppCompatTextView",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            232,
+            578,
+            787,
+            737
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 3,
+        "layer": 2,
+        "area": {
+            "height": 555,
+            "length": 159
+        },
+        "leaf-id": 1,
+        "caption": "navigate up",
+        "icon-cls": null,
+        "description": "Fri, Jun 15"
+    },
+    {
+        "resource-id": "android:id/month_view",
+        "adapter-view": false,
+        "pointer": "4edfa25",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            -14872,
+            0,
+            -13728,
+            1043
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.widget.SimpleMonthView",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            148,
+            800,
+            1292,
+            1843
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 4,
+        "layer": 2,
+        "area": {
+            "height": 1144,
+            "length": 1043
+        },
+        "leaf-id": 2,
+        "ocr": "14151617181910111213212223242829303125262027DONEedededed",
+        "text": "14151617181910111213212223242829303125262027DONEedededed",
+        "caption": "splashscreen",
+        "icon-cls": null,
+        "description": "14151617181910111213212223242829303125262027DONEedededed"
+    },
+    {
+        "resource-id": "android:id/prev",
+        "adapter-view": false,
+        "pointer": "c03fd92",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            "Previous month"
+        ],
+        "rel-bounds": [
+            58,
+            35,
+            226,
+            203
+        ],
+        "draw": false,
+        "focusable": true,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatImageButton",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            206,
+            835,
+            374,
+            1003
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 5,
+        "layer": 2,
+        "area": {
+            "height": 168,
+            "length": 168
+        },
+        "leaf-id": 3,
+        "ocr": "",
+        "text": "",
+        "caption": "next month",
+        "icon-cls": "arrow_backward",
+        "description": [
+            "Previous month"
+        ]
+    },
+    {
+        "resource-id": "android:id/next",
+        "adapter-view": false,
+        "pointer": "5e1a363",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            "Next month"
+        ],
+        "rel-bounds": [
+            918,
+            35,
+            1086,
+            203
+        ],
+        "draw": false,
+        "focusable": true,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "class": "android.support.v7.widget.AppCompatImageButton",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            1066,
+            835,
+            1234,
+            1003
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 6,
+        "layer": 2,
+        "area": {
+            "height": 168,
+            "length": 168
+        },
+        "leaf-id": 4,
+        "ocr": "",
+        "text": "",
+        "caption": "next month",
+        "icon-cls": "arrow_forward",
+        "description": [
+            "Next month"
+        ]
+    },
+    {
+        "text": "Done",
+        "resource-id": "android:id/button1",
+        "adapter-view": false,
+        "pointer": "b31acd5",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            870,
+            14,
+            1102,
+            182
+        ],
+        "draw": false,
+        "focusable": true,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": true,
+        "abs-pos": true,
+        "font-family": "sans-serif-medium",
+        "class": "android.support.v7.widget.AppCompatButton",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            1018,
+            1857,
+            1250,
+            2025
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 7,
+        "layer": 1,
+        "area": {
+            "height": 232,
+            "length": 168
+        },
+        "leaf-id": 5,
+        "caption": "close navigation drawer",
+        "icon-cls": null,
+        "description": "Done"
+    }
+]

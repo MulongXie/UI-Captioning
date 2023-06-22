@@ -1,0 +1,273 @@
+[
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            0,
+            1440,
+            2560
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            2560
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "6348425",
+        "class": "root",
+        "visible-to-user": true,
+        "id": 0,
+        "layer": 0,
+        "children-id": [
+            1,
+            2,
+            5
+        ],
+        "children-depth": 2,
+        "area": {
+            "height": 1440,
+            "length": 2560
+        }
+    },
+    {
+        "scrollable-horizontal": true,
+        "draw": false,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": true,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            0,
+            1440,
+            2214
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            0,
+            1440,
+            2214
+        ],
+        "focused": true,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "2e83787",
+        "class": "org.apache.cordova.engine.SystemWebView",
+        "visible-to-user": true,
+        "id": 1,
+        "layer": 1,
+        "area": {
+            "height": 1440,
+            "length": 2214
+        },
+        "leaf-id": 0,
+        "ocr": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET",
+        "text": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET",
+        "caption": "image desc",
+        "icon-cls": null,
+        "description": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET"
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            0,
+            2217,
+            1440,
+            2392
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            3,
+            1440,
+            178
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "ae58e52",
+        "class": "com.digitalchemy.foundation.android.advertising.c.a",
+        "visible-to-user": true,
+        "id": 2,
+        "layer": 1,
+        "children-id": [
+            3,
+            4
+        ],
+        "children-depth": 2,
+        "area": {
+            "height": 1440,
+            "length": 175
+        }
+    },
+    {
+        "scrollable-horizontal": true,
+        "draw": false,
+        "clickable": true,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": true,
+        "enabled": true,
+        "bounds": [
+            1,
+            2217,
+            1439,
+            2392
+        ],
+        "visibility": "visible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            0,
+            1438,
+            175
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": true,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "fd70e95",
+        "class": "com.google.android.gms.ads.internal.webview.o",
+        "visible-to-user": true,
+        "id": 3,
+        "layer": 2,
+        "area": {
+            "height": 1438,
+            "length": 175
+        },
+        "leaf-id": 1,
+        "ocr": "",
+        "text": "",
+        "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
+        "icon-cls": null,
+        "description": null
+    },
+    {
+        "scrollable-horizontal": false,
+        "draw": true,
+        "clickable": false,
+        "pressed": "not_pressed",
+        "focusable": false,
+        "long-clickable": false,
+        "enabled": true,
+        "bounds": [
+            1,
+            2217,
+            1439,
+            2392
+        ],
+        "visibility": "invisible",
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            1,
+            0,
+            1439,
+            175
+        ],
+        "focused": false,
+        "selected": false,
+        "scrollable-vertical": false,
+        "adapter-view": false,
+        "abs-pos": true,
+        "pointer": "f47c095",
+        "class": "com.google.android.gms.ads.AdView",
+        "visible-to-user": false,
+        "id": 4,
+        "layer": 2,
+        "area": {
+            "height": 1438,
+            "length": 175
+        },
+        "leaf-id": 2,
+        "ocr": "",
+        "text": "",
+        "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
+        "icon-cls": null,
+        "description": null
+    },
+    {
+        "resource-id": "android:id/navigationBarBackground",
+        "adapter-view": false,
+        "pointer": "67895aa",
+        "scrollable-horizontal": false,
+        "selected": false,
+        "content-desc": [
+            null
+        ],
+        "rel-bounds": [
+            0,
+            2392,
+            1440,
+            2560
+        ],
+        "draw": false,
+        "focusable": false,
+        "long-clickable": false,
+        "visibility": "visible",
+        "focused": false,
+        "clickable": false,
+        "abs-pos": true,
+        "class": "android.view.View",
+        "visible-to-user": true,
+        "package": "android",
+        "enabled": true,
+        "bounds": [
+            0,
+            2392,
+            1440,
+            2560
+        ],
+        "pressed": "not_pressed",
+        "scrollable-vertical": false,
+        "id": 5,
+        "layer": 1,
+        "area": {
+            "height": 1440,
+            "length": 168
+        },
+        "leaf-id": 3,
+        "ocr": "",
+        "text": "",
+        "caption": "flash selfie",
+        "icon-cls": null,
+        "description": "flash selfie"
+    }
+]

@@ -1,0 +1,61 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1440,
+        "length": 2560
+    },
+    "children": [
+        {
+            "clickable": true,
+            "class": "org.apache.cordova.engine.SystemWebView",
+            "id": 1,
+            "area": {
+                "height": 1440,
+                "length": 2214
+            },
+            "description": "Menstrual CyclesMenstrual CyclesAdd new cycleWednesday , February, 2017Cycle length :Period length :2017 EQUINOX LSATTRACTIVE OFFERSNOW AVAILABLELearn MoreCHEVROLET"
+        },
+        {
+            "clickable": false,
+            "class": "com.digitalchemy.foundation.advertising.c.a",
+            "id": 2,
+            "area": {
+                "height": 1440,
+                "length": 175
+            },
+            "children": [
+                {
+                    "clickable": true,
+                    "class": "com.google.gms.ads.internal.webview.o",
+                    "id": 3,
+                    "area": {
+                        "height": 1438,
+                        "length": 175
+                    }
+                },
+                {
+                    "clickable": false,
+                    "class": "com.google.gms.ads.AdView",
+                    "id": 4,
+                    "area": {
+                        "height": 1438,
+                        "length": 175
+                    }
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/navigationBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 5,
+            "area": {
+                "height": 1440,
+                "length": 168
+            },
+            "description": "flash selfie"
+        }
+    ]
+}

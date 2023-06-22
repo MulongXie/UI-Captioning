@@ -21,7 +21,8 @@ class GUI:
         self.json_file = gui_json_file
         self.gui_no = gui_img_file.replace('/', '\\').split('\\')[-1].split('.')[0]
 
-        self.img = cv2.resize(cv2.imread(gui_img_file), (1080, 2280))      # resize the image to be consistent with the vh
+        # self.img = cv2.resize(cv2.imread(gui_img_file), (1080, 2280))      # resize the image to be consistent with the vh
+        self.img = cv2.resize(cv2.imread(gui_img_file), (1440, 2560))      # resize the image to be consistent with the vh
         self.json = json.load(open(gui_json_file, 'r', encoding='utf-8'))  # json data, the view hierarchy of the GUI
 
         self.element_id = 0
@@ -74,7 +75,7 @@ class GUI:
         self.remove_redundant_nesting(element_root)
         self.merge_element_with_single_leaf_child(element_root)
         self.extract_children_elements(element_root, 0)
-        self.clac_elements_areas()
+        self.revise_elements_attrs()
         self.gather_leaf_elements()
         # json.dump(self.elements, open(self.output_file_path_elements, 'w', encoding='utf-8'), indent=4)
         # print('Save elements to', self.output_file_path_elements)
@@ -170,10 +171,20 @@ class GUI:
             del element['ancestors']
         return children_depth
 
-    def clac_elements_areas(self):
+    def revise_elements_attrs(self):
+        '''
+        Revise some attributes in elements
+        1. add "area"
+        2. keep "content-desc" as a string
+        '''
         for ele in self.elements:
             bounds = ele['bounds']
             ele['area'] = {'height': int(bounds[2] - bounds[0]), 'length': int(bounds[3] - bounds[1])}
+            if 'content-desc' in ele and type(ele['content-desc']) == list:
+                if not ele['content-desc'][0]:
+                    ele['content-desc'] = ''
+                else:
+                    ele['content-desc'] = ','.join(ele['content-desc'])
 
     def gather_leaf_elements(self):
         i = 0
@@ -241,6 +252,7 @@ class GUI:
         for element in self.elements_leaves:
             if 'text' not in element or element['text'] == '':
                 element['ocr'] = ''
+                element['text'] = ''
                 match_text_and_element(element)
 
     def caption_elements(self, elements=None):

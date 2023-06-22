@@ -1,0 +1,141 @@
+{
+    "clickable": false,
+    "class": "root",
+    "id": 0,
+    "area": {
+        "height": 1440,
+        "length": 2560
+    },
+    "children": [
+        {
+            "clickable": true,
+            "class": ".widget.RelativeLayout",
+            "id": 1,
+            "area": {
+                "height": 1440,
+                "length": 2112
+            },
+            "children": [
+                {
+                    "resource-id": "se.perigee.seven:id/video",
+                    "clickable": true,
+                    "class": "com.perigee.seven.ui.view.VideoView",
+                    "id": 2,
+                    "area": {
+                        "height": 1440,
+                        "length": 1440
+                    },
+                    "description": "LUNGES30"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/video_overlay",
+                    "clickable": true,
+                    "class": ".view.View",
+                    "id": 3,
+                    "area": {
+                        "height": 1440,
+                        "length": 1522
+                    },
+                    "description": "LUNGES30"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/text_exercise",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 4,
+                    "area": {
+                        "height": 1384,
+                        "length": 183
+                    },
+                    "description": "Lunges"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/progress",
+                    "clickable": true,
+                    "class": "com.perigee.seven.ui.view.SegmentedProgressView",
+                    "id": 5,
+                    "area": {
+                        "height": 350,
+                        "length": 350
+                    }
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/forward",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 6,
+                    "area": {
+                        "height": 344,
+                        "length": 350
+                    },
+                    "description": "Forward"
+                },
+                {
+                    "resource-id": "se.perigee.seven:id/backward",
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageView",
+                    "id": 7,
+                    "area": {
+                        "height": 344,
+                        "length": 350
+                    },
+                    "description": "Backwards"
+                }
+            ]
+        },
+        {
+            "resource-id": "se.perigee.seven:id/action_bar",
+            "clickable": false,
+            "class": ".support.v7.widget.Toolbar",
+            "id": 8,
+            "area": {
+                "height": 1440,
+                "length": 196
+            },
+            "children": [
+                {
+                    "clickable": false,
+                    "class": ".support.v7.widget.AppCompatTextView",
+                    "id": 9,
+                    "area": {
+                        "height": 541,
+                        "length": 93
+                    },
+                    "description": "Exercise 10 of 12"
+                },
+                {
+                    "clickable": true,
+                    "class": ".support.v7.widget.AppCompatImageButton",
+                    "id": 10,
+                    "area": {
+                        "height": 196,
+                        "length": 196
+                    },
+                    "description": "Exercise 10 of 12 / Navigate up"
+                }
+            ]
+        },
+        {
+            "resource-id": ":id/navigationBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 11,
+            "area": {
+                "height": 1440,
+                "length": 168
+            },
+            "description": "flash selfie"
+        },
+        {
+            "resource-id": ":id/statusBarBackground",
+            "clickable": false,
+            "class": ".view.View",
+            "id": 12,
+            "area": {
+                "height": 1440,
+                "length": 84
+            },
+            "description": "FAK5:03"
+        }
+    ]
+}
