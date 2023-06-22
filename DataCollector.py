@@ -3,11 +3,13 @@ from glob import glob
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
+from utils.llm.Openai import OpenAI
+from utils.llm.Summarizer import Summarizer
 from GUI import GUI
 
 
 class DataCollector:
-    def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560)):
+    def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560), engine_model='gpt-3.5-turbo'):
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.img_files = glob(pjoin(input_dir, '*.jpg'))
@@ -16,6 +18,9 @@ class DataCollector:
         self.gui_img_resize = gui_img_resize
         self.gui_detection_models = {'classification':IconClassifier(model_path='./utils/classification/model_results/best-0.93.pt', class_path='./utils/classification/model_results/iconModel_labels.json'),
                                      'caption':IconCaption(vocab_path='./utils/classification/model_results/vocab_idx2word.json',  model_path='./utils/classification/model_results/labeldroid.pt')}  # {IconClassification, IconCaption}
+
+        self.llm_engine = OpenAI(model=engine_model)
+        self.llm_summarizer = Summarizer(self.llm_engine)
 
     '''
     ********************
@@ -40,4 +45,9 @@ class DataCollector:
         if show:
             gui.show_all_elements()
 
+    '''
+    *************************
+    *** LLM Summarization ***
+    *************************
+    '''
 
