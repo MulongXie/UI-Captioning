@@ -48,16 +48,6 @@
                     "description": " Continue"
                 }
             ]
-        },
-        {
-            "resource-id": ":id/navigationBarBackground",
-            "clickable": false,
-            "class": ".view.View",
-            "id": 5,
-            "area": {
-                "height": 1440,
-                "length": 168
-            }
         }
     ]
 }
