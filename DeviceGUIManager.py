@@ -166,5 +166,5 @@ class DeviceGUIManager:
 
 
 if __name__ == '__main__':
-    gui_manager = GUIDataManager('twitter', 1, output_file_root='../data')
+    gui_manager = DeviceGUIManager('twitter', 1, output_file_root='../data')
     gui_manager.get_current_gui_from_device(gui_detection=True, show_gui_ele=True)
