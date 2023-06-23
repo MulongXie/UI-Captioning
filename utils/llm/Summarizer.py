@@ -4,19 +4,36 @@ class Summarizer:
         self.conversation = conversation
         self.gui_summary = None
 
-    def reset_conversation_with_gui(self, gui):
+    def reset_conversation(self):
         self.conversation = [
             {'role': 'system', 'content': self.engine.role},
-            {'role': 'user', 'content': 'This is a view hierarchy of a UI containing various UI blocks and elements.'},
-            {'role': 'user', 'content': str(gui.element_tree)},
+            {'role': 'user', 'content': 'You will be given some view hierarchies of UIs containing various UI blocks and elements.'}
         ]
 
-    def summarize_gui(self, gui, printlog=False):
-        self.reset_conversation_with_gui(gui)
+    def summarize_gui(self, gui, factor='functionality', word_limit=100, printlog=False):
         self.conversation.append(
-            {'role': 'user', 'content': 'Please summarize this UI.'}
+            {'role': 'user', 'content': 'Please summarize this UI in terms of ' + factor + ' within ' + str(word_limit) + ' words.' + str(gui.element_tree)}
         )
         self.conversation.append(self.engine.ask_openai_conversation(self.conversation, printlog))
         self.gui_summary = self.conversation[-1]['content']
         return self.gui_summary
+
+    def wrap_previous_annotations_as_examples(self, annotations):
+        self.reset_conversation()
+        # append previous annotations as examples
+        if len(annotations) > 0:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Here are some examples with appropriate summarization.'},
+            )
+            for i, ann in enumerate(annotations):
+                if ann['revised']:
+                    # prev_ann = 'The summarization is not perfectly correct, here is the revision by human and the reasons for revision.' \
+                    #            'Learn from them for your future summarization generation.\n' \
+                    #            '#Revised Ground Truth Summarization:\n' + annotations['annotation'] + '.\n' \
+                    #            '#Reasons for Revision:\n' + annotations['revision-suggestion'] + '.\n'
+                    self.conversation += [
+                        {'role': 'user', 'content': 'Example ' + str(i) + ': #GUI:' + str(ann['element-tree'])},
+                        {'role': 'user', 'content': '#Ground Truth Summarization: ' + ann['annotation']},
+                        {'role': 'user', 'content': '#Points to be noticed: ' + ann['revision-suggestion']},
+                    ]
 

@@ -26,6 +26,8 @@ class DataCollector:
         self.llm_engine = OpenAI(model=engine_model)
         self.llm_summarizer = Summarizer(self.llm_engine)
 
+        self.annotations = []
+
     '''
     ********************
     *** GUI Analysis ***
@@ -56,34 +58,39 @@ class DataCollector:
     '''
     def annotate_gui(self, gui_img_file, gui_json_file, show=False):
         # 1. analyze GUI
+        print('*** GUI Analysis ***')
         gui = self.analyze_gui(gui_img_file, gui_json_file, show)
-        ann_result = {'gui_no': gui.gui_no, 'element_tree': str(gui.element_tree)}
+        ann_result = {'gui-no': gui.gui_no, 'element-tree': str(gui.element_tree)}
+
         # 2. generate summarization by llm
+        self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[0:])
         summarization = self.llm_summarizer.summarize_gui(gui)
-        # 3. check if need revision
+
+        # 3. annotation revision
         print('*** Summarization ***\n', summarization)
-        gui.show_all_elements()
+        key = gui.show_all_elements()
+        if key == ord('q'):
+            return None
         revise = input('Do you want to revise the summarization? ("y" or "n"): ')
         if revise.lower() == 'y':
             print('*** Revision ***')
             ground_truth = input('Input your ground truth: ')
-            revision_points = input('Input revision points: ')
-            annotation = 'The summarization is not perfectly correct, here is the revision by human and the reasons for revision.' \
-                         'Learn from them for your future summarization generation.\n' \
-                         '#Revised Ground Truth Summarization:\n' + ground_truth + '\n' \
-                         '#Reasons for Revision:\n' + revision_points + '\n'
+            revision_suggestion = input('Input revision points: ')
             ann_result['revised'] = True
-            ann_result['annotation'] = annotation
+            ann_result['annotation'] = ground_truth
+            ann_result['revision-suggestion'] = revision_suggestion
         else:
             ann_result['revised'] = False
             ann_result['annotation'] = summarization
         json.dump(ann_result, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_ann.json'), 'w', encoding='utf-8'), indent=4)
+        self.annotations.append(ann_result)
         return ann_result
 
     def annotate_all_guis(self, start_gui_no, end_gui_no):
         for i, gui_img_file in enumerate(self.img_files):
             gui_vh_file = self.vh_files[i]
-            annotation = self.annotate_gui(gui_img_file, gui_vh_file)
-            if annotation['revised']:
-                pass
+            print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
+            if not self.annotate_gui(gui_img_file, gui_vh_file):
+                break
+
 

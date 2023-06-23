@@ -408,8 +408,9 @@ class GUI:
             color = (0,255,0) if not ele['clickable'] else (0,0,255)
             cv2.rectangle(board, (bounds[0], bounds[1]), (bounds[2], bounds[3]), color, 3)
         cv2.imshow('elements', cv2.resize(board, (board.shape[1] // 3, board.shape[0] // 3)))
-        cv2.waitKey()
+        key = cv2.waitKey()
         cv2.destroyWindow('elements')
+        return key
 
     def show_element(self, element, show_children=True):
         board = self.img.copy()

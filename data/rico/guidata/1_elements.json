@@ -33,8 +33,7 @@
         "layer": 0,
         "children-id": [
             1,
-            2,
-            5
+            2
         ],
         "children-depth": 2,
         "area": {
@@ -212,50 +211,5 @@
         "caption": "<unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk> <unk>",
         "icon-cls": null,
         "description": null
-    },
-    {
-        "resource-id": "android:id/navigationBarBackground",
-        "adapter-view": false,
-        "pointer": "67895aa",
-        "scrollable-horizontal": false,
-        "selected": false,
-        "content-desc": "",
-        "rel-bounds": [
-            0,
-            2392,
-            1440,
-            2560
-        ],
-        "draw": false,
-        "focusable": false,
-        "long-clickable": false,
-        "visibility": "visible",
-        "focused": false,
-        "clickable": false,
-        "abs-pos": true,
-        "class": "android.view.View",
-        "visible-to-user": true,
-        "package": "android",
-        "enabled": true,
-        "bounds": [
-            0,
-            2392,
-            1440,
-            2560
-        ],
-        "pressed": "not_pressed",
-        "scrollable-vertical": false,
-        "id": 5,
-        "layer": 1,
-        "area": {
-            "height": 1440,
-            "length": 168
-        },
-        "leaf-id": 3,
-        "ocr": "",
-        "text": "",
-        "caption": "flash selfie",
-        "icon-cls": null,
-        "description": "flash selfie"
     }
 ]
