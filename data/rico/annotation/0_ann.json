@@ -1,7 +1,6 @@
 {
     "gui-no": "0",
     "element-tree": "{'clickable': False, 'class': 'root', 'id': 0, 'area': {'height': 1440, 'length': 2560}, 'children': [{'clickable': True, 'class': 'org.apache.cordova.engine.SystemWebView', 'id': 1, 'area': {'height': 1440, 'length': 2392}, 'description': ' Initial Setup Default period length The length of your period . Usually lasts between and days Default cycle length The duration between the start dates of two periods . Usually between 23 and 35 days . Start date of your last period 10 30 Feb 2017 Continue'}, {'clickable': False, 'class': 'com.digitalchemy.foundation.advertising.c.a', 'id': 2, 'area': {'height': 1440, 'length': 175}, 'children': [{'clickable': False, 'children': [], 'class': 'com.google.gms.ads.AdView', 'id': 3, 'area': {'height': 1438, 'length': 175}, 'description': ' Continue'}, {'clickable': False, 'class': 'com.google.gms.ads.AdView', 'id': 4, 'area': {'height': 1438, 'length': 175}, 'description': ' Continue'}]}]}",
-    "revised": true,
-    "annotation": "test",
-    "revision-suggestion": "1 2"
+    "revised": false,
+    "annotation": "The UI displays a form for setting up menstrual cycle details, such as period length, cycle length and start date. It also contains ads in a side panel."
 }

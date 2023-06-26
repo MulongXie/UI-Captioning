@@ -1,7 +1,6 @@
 {
     "gui-no": "1",
     "element-tree": "{'clickable': False, 'class': 'root', 'id': 0, 'area': {'height': 1440, 'length': 2560}, 'children': [{'clickable': True, 'class': 'org.apache.cordova.engine.SystemWebView', 'id': 1, 'area': {'height': 1440, 'length': 2214}, 'description': ' Menstrual Cycles Menstrual Cycles Add new cycle Wednesday , February , 2017 Cycle length : Period length : 2017 EQUINOX LS ATTRACTIVE OFFERS NOW AVAILABLE Learn More CHEVROLET'}, {'clickable': False, 'class': 'com.digitalchemy.foundation.advertising.c.a', 'id': 2, 'area': {'height': 1440, 'length': 175}, 'children': [{'clickable': True, 'class': 'com.google.gms.ads.internal.webview.o', 'id': 3, 'area': {'height': 1438, 'length': 175}}, {'clickable': False, 'class': 'com.google.gms.ads.AdView', 'id': 4, 'area': {'height': 1438, 'length': 175}}]}]}",
-    "revised": true,
-    "annotation": "1 2",
-    "revision-suggestion": "1 2"
+    "revised": false,
+    "annotation": "This UI represents a mobile app that tracks menstrual cycles. It allows the user to add new cycles, enter the length of the cycle and periods, and presents attractive offers to users. It also shows a non-clickable advertisement."
 }

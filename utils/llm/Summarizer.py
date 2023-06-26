@@ -10,7 +10,7 @@ class Summarizer:
             {'role': 'user', 'content': 'You will be given some view hierarchies of UIs containing various UI blocks and elements.'}
         ]
 
-    def summarize_gui(self, gui, factor='functionality', word_limit=100, printlog=False):
+    def summarize_gui(self, gui, factor='functionality', word_limit=50, printlog=False):
         self.conversation.append(
             {'role': 'user', 'content': 'Please summarize this UI in terms of ' + factor + ' within ' + str(word_limit) + ' words.' + str(gui.element_tree)}
         )
@@ -34,6 +34,6 @@ class Summarizer:
                     self.conversation += [
                         {'role': 'user', 'content': 'Example ' + str(i) + ': #GUI:' + str(ann['element-tree'])},
                         {'role': 'user', 'content': '#Ground Truth Summarization: ' + ann['annotation']},
-                        {'role': 'user', 'content': '#Points to be noticed: ' + ann['revision-suggestion']},
+                        {'role': 'user', 'content': '#Revision Suggestions: ' + ann['revision-suggestion']},
                     ]
 

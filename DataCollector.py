@@ -16,8 +16,8 @@ class DataCollector:
         self.output_dir = output_dir
         self.output_annotation_dir = pjoin(self.output_dir, 'annotation')
         os.makedirs(self.output_annotation_dir, exist_ok=True)
-        self.img_files = glob(pjoin(input_dir, '*.jpg'))
-        self.vh_files = glob(pjoin(input_dir, '*.json'))
+        self.img_files = sorted(glob(pjoin(input_dir, '*.jpg')))
+        self.vh_files = sorted(glob(pjoin(input_dir, '*.json')))
 
         self.gui_img_resize = gui_img_resize
         self.gui_detection_models = {'classification':IconClassifier(model_path='./utils/classification/model_results/best-0.93.pt', class_path='./utils/classification/model_results/iconModel_labels.json'),
@@ -56,10 +56,16 @@ class DataCollector:
     *** GUI Annotation ***
     **********************
     '''
-    def annotate_gui(self, gui_img_file, gui_json_file, show=False):
+    def annotate_gui(self, gui_img_file, gui_json_file, load=True, show=False):
         # 1. analyze GUI
-        print('*** GUI Analysis ***')
-        gui = self.analyze_gui(gui_img_file, gui_json_file, show)
+        if not load:
+            print('*** GUI Analysis ***')
+            gui = self.analyze_gui(gui_img_file, gui_json_file, show)
+        else:
+            print('*** Load GUI Info ***')
+            gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
+            gui.load_elements()
+
         ann_result = {'gui-no': gui.gui_no, 'element-tree': str(gui.element_tree)}
 
         # 2. generate summarization by llm
@@ -68,9 +74,10 @@ class DataCollector:
 
         # 3. annotation revision
         print('*** Summarization ***\n', summarization)
-        key = gui.show_all_elements()
-        if key == ord('q'):
-            return None
+        if show:
+            key = gui.show_all_elements()
+            if key == ord('q'):
+                return None          
         revise = input('Do you want to revise the summarization? ("y" or "n"): ')
         if revise.lower() == 'y':
             print('*** Revision ***')
@@ -86,11 +93,9 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no):
-        for i, gui_img_file in enumerate(self.img_files):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, load=True):
+        for i, gui_img_file in enumerate(self.img_files[start_gui_no : end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
-            if not self.annotate_gui(gui_img_file, gui_vh_file):
+            if not self.annotate_gui(gui_img_file, gui_vh_file, load):
                 break
-
-
