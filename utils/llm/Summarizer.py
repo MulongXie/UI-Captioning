@@ -12,7 +12,7 @@ class Summarizer:
 
     def summarize_gui(self, gui, factor='functionality', word_limit=50, printlog=False):
         self.conversation.append(
-            {'role': 'user', 'content': 'Please summarize this UI in terms of ' + factor + ' within ' + str(word_limit) + ' words.' + str(gui.element_tree)}
+            {'role': 'user', 'content': 'Summarize this UI in terms of ' + factor + ' within ' + str(word_limit) + ' words.' + str(gui.element_tree)}
         )
         self.conversation.append(self.engine.ask_openai_conversation(self.conversation, printlog))
         self.gui_summary = self.conversation[-1]['content']
@@ -36,4 +36,7 @@ class Summarizer:
                         {'role': 'user', 'content': '#Ground Truth Summarization: ' + ann['annotation']},
                         {'role': 'user', 'content': '#Revision Suggestions: ' + ann['revision-suggestion']},
                     ]
+            self.conversation.append(
+                {'role': 'user', 'content': 'Try your best to learn and follow the Examples in future answer.'},
+            )
 

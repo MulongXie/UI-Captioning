@@ -69,7 +69,7 @@ class DataCollector:
         ann_result = {'gui-no': gui.gui_no, 'element-tree': str(gui.element_tree)}
 
         # 2. generate summarization by llm
-        self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[0:])
+        self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[-3:])
         summarization = self.llm_summarizer.summarize_gui(gui)
 
         # 3. annotation revision
