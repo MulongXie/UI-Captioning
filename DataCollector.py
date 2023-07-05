@@ -56,7 +56,7 @@ class DataCollector:
     *** GUI Annotation ***
     **********************
     '''
-    def annotate_gui(self, gui_img_file, gui_json_file, load=True, show=False):
+    def annotate_gui(self, gui_img_file, gui_json_file, factor, load=True, show=False):
         # 1. analyze GUI
         if not load:
             print('*** GUI Analysis ***')
@@ -66,11 +66,11 @@ class DataCollector:
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
             gui.load_elements()
 
-        ann_result = {'gui-no': gui.gui_no, 'element-tree': str(gui.element_tree)}
+        ann_result = {'gui-no': gui.gui_no, 'factor':factor, 'element-tree': str(gui.element_tree)}
 
         # 2. generate summarization by llm
         self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[-3:])
-        summarization = self.llm_summarizer.summarize_gui(gui)
+        summarization = self.llm_summarizer.summarize_gui(gui, factor=factor)
 
         # 3. annotation revision
         print('*** Summarization ***\n', summarization)
@@ -93,9 +93,9 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, load=True, show=False):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, factor, load=True, show=False):
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
-            if not self.annotate_gui(gui_img_file, gui_vh_file, load, show):
+            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=factor, load=load, show=show):
                 break
