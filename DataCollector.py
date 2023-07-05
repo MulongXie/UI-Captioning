@@ -26,6 +26,7 @@ class DataCollector:
         self.llm_engine = OpenAI(model=engine_model)
         self.llm_summarizer = Summarizer(self.llm_engine)
 
+        self.turn_on_revision = True   # True to turn on revision
         self.annotations = []
         self.annotation_factors = ['Key Element', 'Functionality', 'Layout', "Accessibility"]
 
@@ -78,15 +79,22 @@ class DataCollector:
         if show_gui:
             key = gui.show_all_elements()
             if key == ord('q'):
-                return None          
-        revise = input('Do you want to revise the summarization? ("y" or "n"): ')
-        if revise.lower() == 'y':
-            print('*** Revision ***')
-            ground_truth = input('Input your ground truth: ')
-            revision_suggestion = input('Input revision points: ')
-            ann_result['revised'] = True
-            ann_result['annotation'] = ground_truth
-            ann_result['revision-suggestion'] = revision_suggestion
+                return None
+        if self.turn_on_revision:
+            revise = input('Do you want to revise the summarization? ("y" or "n"): ')
+            if revise.lower() == 'y':
+                print('*** Revision ***')
+                ground_truth = input('Input your ground truth: ')
+                revision_suggestion = input('Input revision points: ')
+                ann_result['revised'] = True
+                ann_result['annotation'] = ground_truth
+                ann_result['revision-suggestion'] = revision_suggestion
+            else:
+                ann_result['revised'] = False
+                ann_result['annotation'] = summarization
+                turn_off = input('Do you want to turn off revision from now? ("y" or "n"): ')
+                if turn_off.lower() == 'y':
+                    self.turn_on_revision = False
         else:
             ann_result['revised'] = False
             ann_result['annotation'] = summarization
@@ -94,14 +102,16 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False, turn_on_revision=True):
         '''
         :param start_gui_no: int, start gui file name
         :param end_gui_no: int, end gui file name
         :param factor_id: factor to annotate, ['Key Element', 'Functionality', 'Layout', "Accessibility"]
         :param load_gui: whether to load an existing GUI analysis result
         :param show_gui: whether to show the GUI while annotating
+        :param turn_on_revision: whether to offer the chance to revise the summarization at all
         '''
+        self.turn_on_revision = turn_on_revision
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
