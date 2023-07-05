@@ -57,11 +57,11 @@ class DataCollector:
     *** GUI Annotation ***
     **********************
     '''
-    def annotate_gui(self, gui_img_file, gui_json_file, factor, load=True, show=False):
+    def annotate_gui(self, gui_img_file, gui_json_file, factor, load_gui=True, show_gui=False):
         # 1. analyze GUI
-        if not load:
+        if not load_gui:
             print('*** GUI Analysis ***')
-            gui = self.analyze_gui(gui_img_file, gui_json_file, show)
+            gui = self.analyze_gui(gui_img_file, gui_json_file, show=show_gui)
         else:
             print('*** Load GUI Info ***')
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
@@ -74,8 +74,8 @@ class DataCollector:
         summarization = self.llm_summarizer.summarize_gui(gui, factor=factor)
 
         # 3. annotation revision
-        print('*** Summarization ***\n', summarization)
-        if show:
+        print('*** Summarization [' + factor + '] ***\n', summarization)
+        if show_gui:
             key = gui.show_all_elements()
             if key == ord('q'):
                 return None          
@@ -94,16 +94,16 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load=True, show=False):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False):
         '''
         :param start_gui_no: int, start gui file name
         :param end_gui_no: int, end gui file name
         :param factor_id: factor to annotate, ['Key Element', 'Functionality', 'Layout', "Accessibility"]
-        :param load: whether to load an existing GUI analysis result
-        :param show: whether to show the GUI while annotating
+        :param load_gui: whether to load an existing GUI analysis result
+        :param show_gui: whether to show the GUI while annotating
         '''
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
-            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load=load, show=show):
+            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
