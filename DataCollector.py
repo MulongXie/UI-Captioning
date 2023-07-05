@@ -93,9 +93,9 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, load=True):
-        for i, gui_img_file in enumerate(self.img_files[start_gui_no : end_gui_no]):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, load=True, show=False):
+        for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
-            if not self.annotate_gui(gui_img_file, gui_vh_file, load):
+            if not self.annotate_gui(gui_img_file, gui_vh_file, load, show):
                 break
