@@ -27,6 +27,7 @@ class DataCollector:
         self.llm_summarizer = Summarizer(self.llm_engine)
 
         self.annotations = []
+        self.annotation_factors = ['Key Element', 'Functionality', 'Layout', "Accessibility"]
 
     '''
     ********************
@@ -93,9 +94,16 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, factor, load=True, show=False):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load=True, show=False):
+        '''
+        :param start_gui_no: int, start gui file name
+        :param end_gui_no: int, end gui file name
+        :param factor_id: factor to annotate, ['Key Element', 'Functionality', 'Layout', "Accessibility"]
+        :param load: whether to load an existing GUI analysis result
+        :param show: whether to show the GUI while annotating
+        '''
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
-            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=factor, load=load, show=show):
+            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load=load, show=show):
                 break
