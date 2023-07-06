@@ -81,7 +81,7 @@ class DataCollector:
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
             gui.load_elements()
 
-        ann_result = {'gui-no': gui.gui_no, 'factor':factor, 'element-tree': str(gui.element_tree)}
+        ann_result = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree)}
 
         # 2. generate summarization by llm
         self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[-3:])
@@ -111,7 +111,7 @@ class DataCollector:
         else:
             ann_result['revised'] = False
             ann_result['annotation'] = summarization
-        json.dump(ann_result, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_ann.json'), 'w', encoding='utf-8'), indent=4)
+        json.dump(ann_result, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(ann_result)
         return ann_result
 
@@ -125,14 +125,17 @@ class DataCollector:
         :param turn_on_revision: whether to offer the chance to revise the summarization at all
         '''
         self.turn_on_revision = turn_on_revision
+        total = len(self.img_files[start_gui_no: end_gui_no])
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
-            print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
+            print('\n\n=== Annotating (press "q" to quit) === [%d / %d] %s' % (i+1, total, gui_img_file))
             if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
 
 
 if __name__ == '__main__':
-    data = DataCollector('data/rico/raw/', 'data/rico/', engine_model='gpt-3.5-turbo')
+    data = DataCollector(input_dir='data/rico/raw/',
+                         output_dir='data/rico/',
+                         engine_model='gpt-3.5-turbo')
     data.annotate_all_guis(start_gui_no=3, end_gui_no=9, factor_id=0,
                            load_gui=True, show_gui=True, turn_on_revision=True)
