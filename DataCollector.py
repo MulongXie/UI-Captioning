@@ -2,12 +2,14 @@ from os.path import join as pjoin
 from glob import glob
 import os
 import json
+import sys
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
 from utils.llm.Openai import OpenAI
 from utils.llm.Summarizer import Summarizer
-from GUI import GUI
+from module.GUI import GUI
+sys.path.append('utils/classification')
 
 
 class DataCollector:
@@ -117,3 +119,9 @@ class DataCollector:
             print('\n=== Annotating (press "q" to quit) ===', gui_img_file)
             if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
+
+
+if __name__ == '__main__':
+    data = DataCollector('data/rico/raw/', 'data/rico/', engine_model='gpt-3.5-turbo')
+    data.annotate_all_guis(start_gui_no=3, end_gui_no=9, factor_id=0,
+                           load_gui=True, show_gui=True, turn_on_revision=True)

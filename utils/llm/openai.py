@@ -4,7 +4,7 @@ import tiktoken
 
 class OpenAI:
     def __init__(self, role=None, model='gpt-4'):
-        openai.api_key = open('utils/llm/openaikey.txt', 'r').readline()
+        openai.api_key = open('C:/Mulong/Code/UI-Captioning/utils/llm/openaikey.txt', 'r').readline()
         self.role = role if role else 'You are a mobile virtual assistant that understands and interacts with the user interface to complete a given task.'
         self.model = model
 

@@ -2,6 +2,9 @@ from GUI import GUI
 import cv2
 import time
 
+from utils.llm.Summarizer import Summarizer
+from utils.llm.Openai import OpenAI
+
 
 class DeviceGUIManager:
     def __init__(self, app_name, test_case_no, output_file_root='data'):
@@ -44,7 +47,7 @@ class DeviceGUIManager:
     '''
     def init_device(self):
         from ppadb.client import Client as AdbClient
-        from Device import Device
+        from module.Device import Device
         client = AdbClient(host="127.0.0.1", port=5037)
         if len(client.devices()) > 0:
             print('Load Device')
@@ -58,8 +61,8 @@ class DeviceGUIManager:
         from utils.classification.IconClassifier import IconClassifier
         from utils.classification.IconCaption import IconCaption
         # print('- Load GUI Detection Model -')
-        self.gui_detection_models['classification'] = IconClassifier(model_path='./utils/classification/model_results/best-0.93.pt', class_path='./utils/classification/model_results/iconModel_labels.json')
-        self.gui_detection_models['caption'] = IconCaption(vocab_path='./utils/classification/model_results/vocab_idx2word.json',  model_path='./utils/classification/model_results/labeldroid.pt')
+        self.gui_detection_models['classification'] = IconClassifier(model_path='../utils/classification/model_results/best-0.93.pt', class_path='../utils/classification/model_results/iconModel_labels.json')
+        self.gui_detection_models['caption'] = IconCaption(vocab_path='../utils/classification/model_results/vocab_idx2word.json', model_path='../utils/classification/model_results/labeldroid.pt')
 
     '''
     ********************
@@ -166,5 +169,12 @@ class DeviceGUIManager:
 
 
 if __name__ == '__main__':
+    # get the current gui
     gui_manager = DeviceGUIManager('twitter', 1, output_file_root='../data')
-    gui_manager.get_current_gui_from_device(gui_detection=True, show_gui_ele=True)
+    gui = gui_manager.get_current_gui_from_device(gui_detection=True, show_gui_ele=True)
+    # summarize ui caption
+    llm_summarizer = Summarizer(OpenAI(model='gpt-3.5-turbo'))
+    llm_summarizer.reset_conversation()
+    factor = 'functionality'
+    summarization = llm_summarizer.summarize_gui(gui, factor=factor)
+    print('*** Summarization [' + factor + '] ***\n', summarization)

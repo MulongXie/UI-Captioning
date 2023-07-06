@@ -10,7 +10,7 @@ from utils.ocr.text_detection import text_detection
 
 import sys
 import warnings
-sys.path.append('utils/classification')
+sys.path.append('../utils/classification')
 warnings.filterwarnings("ignore", category=Warning)
 
 
@@ -276,8 +276,8 @@ class GUI:
 
     def caption_elements(self, elements=None):
         if self.model_icon_caption is None:
-            self.model_icon_caption = IconCaption(vocab_path='utils/classification/model_results/vocab_idx2word.json',
-                                                  model_path='utils/classification/model_results/labeldroid.pt')
+            self.model_icon_caption = IconCaption(vocab_path='../utils/classification/model_results/vocab_idx2word.json',
+                                                  model_path='../utils/classification/model_results/labeldroid.pt')
         elements = self.elements_leaves if elements is None else elements
         clips = []
         for ele in elements:
@@ -289,8 +289,8 @@ class GUI:
 
     def classify_elements(self, elements=None):
         if self.model_icon_classification is None:
-            self.model_icon_classification = IconClassifier(model_path='utils/classification/model_results/best-0.93.pt',
-                                                            class_path='utils/classification/model_results/iconModel_labels.json')
+            self.model_icon_classification = IconClassifier(model_path='../utils/classification/model_results/best-0.93.pt',
+                                                            class_path='../utils/classification/model_results/iconModel_labels.json')
         elements = self.elements_leaves if elements is None else elements
         clips = []
         for ele in elements:
@@ -438,8 +438,8 @@ class GUI:
 if __name__ == '__main__':
     load = False
     gui = GUI(gui_img_file='data/rico/raw/0.png',
-              gui_json_file='data/rico/raw/0.json',
-              output_file_root='data/rico/guidata',
+              gui_json_file='../data/rico/raw/0.json',
+              output_file_root='../data/rico/guidata',
               resize=(1440, 2560))
     # load previous result
     if load:
