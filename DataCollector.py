@@ -5,6 +5,7 @@ import json
 import sys
 import shutil
 import warnings
+import cv2
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
@@ -23,14 +24,40 @@ def rico_sca_data_generation(rico_sca_dir='C:/Mulong/Data/rico/rico_sca', rico_d
         shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
 
 
+def check_annotations(gui_dir='C:/Mulong/Data/rico/rico_sca',
+                      annotation_dir='C:/Mulong/Data/ui captioning/annotation',
+                      revision_dir='C:/Mulong/Data/ui captioning/annotation-revision'):
+    annotation_files = glob(pjoin(annotation_dir, '*'))
+    for file in annotation_files:
+        annotation = json.load(open(file, 'r', encoding='utf-8'))
+        gui_file = pjoin(gui_dir, annotation['gui-no'] + '.jpg')
+        gui_img = cv2.resize(cv2.imread(gui_file), (500, 1000))
+        print('[File]:', gui_file)
+        print('[Factor]:', annotation['factor'])
+        print('[Caption]', annotation['annotation'])
+        print('*** Press "q" to quit, "r" to revise, anything else to continue ***')
+
+        cv2.imshow('gui', gui_img)
+        key = cv2.waitKey(0)
+        if key == ord('q'):
+            break
+        elif key == ord('r'):
+            annotation['annotation'] = input('Revision:')
+            revision_file = pjoin(revision_dir, annotation['gui-no'] + '_' + annotation['factor'] + '.json')
+            json.dump(annotation, open(revision_file, 'w', encoding='utf-8'), indent=4)
+            print('*** Revision save to %s ***' % revision_file)
+        print('\n')
+    cv2.destroyAllWindows()
+
+
 class DataCollector:
     def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560), engine_model='gpt-3.5-turbo'):
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.output_annotation_dir = pjoin(self.output_dir, 'annotation')
         os.makedirs(self.output_annotation_dir, exist_ok=True)
-        self.img_files = sorted(glob(pjoin(input_dir, '*.jpg')), key=lambda x: int(x.split('\\')[-1].split('.')[0]))
-        self.vh_files = sorted(glob(pjoin(input_dir, '*.json')), key=lambda x: int(x.split('\\')[-1].split('.')[0]))
+        self.img_files = sorted(glob(pjoin(input_dir, '*.jpg')), key=lambda x: int(os.path.basename(x).split('.')[0]))
+        self.vh_files = sorted(glob(pjoin(input_dir, '*.json')), key=lambda x: int(os.path.basename(x).split('.')[0]))
 
         self.gui_img_resize = gui_img_resize
         self.gui_detection_models = {'classification':IconClassifier(model_path='./utils/classification/model_results/best-0.93.pt', class_path='./utils/classification/model_results/iconModel_labels.json'),
@@ -125,10 +152,9 @@ class DataCollector:
         :param turn_on_revision: whether to offer the chance to revise the summarization at all
         '''
         self.turn_on_revision = turn_on_revision
-        total = len(self.img_files[start_gui_no: end_gui_no])
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[i]
-            print('\n\n=== Annotating (press "q" to quit) === [%d / %d] %s' % (i+1, total, gui_img_file))
+            print('\n\n=== Annotating (press "q" to quit) === [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
             if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
 
