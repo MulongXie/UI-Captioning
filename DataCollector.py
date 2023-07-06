@@ -4,6 +4,7 @@ import os
 import json
 import sys
 import shutil
+import warnings
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
@@ -11,12 +12,13 @@ from utils.llm.Openai import OpenAI
 from utils.llm.Summarizer import Summarizer
 from module.GUI import GUI
 sys.path.append('utils/classification')
+warnings.filterwarnings("ignore", category=Warning)
 
 
 def rico_sca_data_generation(rico_sca_dir='C:/Mulong/Data/rico/rico_sca', rico_data_dir='D:/Mulong/Datasets/gui/rico/combined/all'):
     ui_no = open(pjoin(rico_sca_dir, 'rico_sca.txt'), 'r')
-    for l in ui_no.readlines():
-        ui_name = l.split('.')[0]
+    for line in ui_no.readlines():
+        ui_name = line.split('.')[0]
         shutil.copy(pjoin(rico_data_dir, ui_name + '.jpg'), pjoin(rico_sca_dir, ui_name + '.jpg'))
         shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
 
@@ -27,8 +29,8 @@ class DataCollector:
         self.output_dir = output_dir
         self.output_annotation_dir = pjoin(self.output_dir, 'annotation')
         os.makedirs(self.output_annotation_dir, exist_ok=True)
-        self.img_files = sorted(glob(pjoin(input_dir, '*.jpg')))
-        self.vh_files = sorted(glob(pjoin(input_dir, '*.json')))
+        self.img_files = sorted(glob(pjoin(input_dir, '*.jpg')), key=lambda x: int(x.split('\\')[-1].split('.')[0]))
+        self.vh_files = sorted(glob(pjoin(input_dir, '*.json')), key=lambda x: int(x.split('\\')[-1].split('.')[0]))
 
         self.gui_img_resize = gui_img_resize
         self.gui_detection_models = {'classification':IconClassifier(model_path='./utils/classification/model_results/best-0.93.pt', class_path='./utils/classification/model_results/iconModel_labels.json'),
