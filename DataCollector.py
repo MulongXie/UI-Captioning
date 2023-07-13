@@ -24,21 +24,24 @@ def rico_sca_data_generation(rico_sca_dir='C:/Mulong/Data/rico/rico_sca', rico_d
         shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
 
 
-def check_annotations(gui_dir='C:/Mulong/Data/rico/rico_sca',
+def check_annotations(rico_dir='C:/Mulong/Data/rico/rico_sca',
+                      gui_dir='C:/Mulong/Data/ui captioning',
                       annotation_dir='C:/Mulong/Data/ui captioning/annotation',
                       revision_dir='C:/Mulong/Data/ui captioning/annotation-revision'):
     annotation_files = glob(pjoin(annotation_dir, '*'))
     for file in annotation_files:
+        # load annotation
         annotation = json.load(open(file, 'r', encoding='utf-8'))
-        gui_file = pjoin(gui_dir, annotation['gui-no'] + '.jpg')
-        gui_img = cv2.resize(cv2.imread(gui_file), (500, 1000))
-        print('[File]:', gui_file)
+        print('[File]:', file)
         print('[Factor]:', annotation['factor'])
         print('[Caption]', annotation['annotation'])
         print('*** Press "q" to quit, "r" to revise, anything else to continue ***')
-
-        cv2.imshow('gui', gui_img)
-        key = cv2.waitKey(0)
+        # show gui
+        gui_img_file = pjoin(rico_dir, annotation['gui-no'] + '.jpg')
+        gui_vh_file = pjoin(rico_dir, annotation['gui-no'] + '.json')
+        gui = GUI(gui_img_file, gui_vh_file, gui_dir, resize=(1440, 2560))
+        gui.load_elements()
+        key = gui.show_all_elements()
         if key == ord('q'):
             break
         elif key == ord('r'):
@@ -47,25 +50,25 @@ def check_annotations(gui_dir='C:/Mulong/Data/rico/rico_sca',
             json.dump(annotation, open(revision_file, 'w', encoding='utf-8'), indent=4)
             print('*** Revision save to %s ***' % revision_file)
         print('\n')
-    cv2.destroyAllWindows()
 
 
 def check_annotation_by_ui_id(gui_id,
                               rico_dir='C:/Mulong/Data/rico/rico_sca',
                               gui_dir='C:/Mulong/Data/ui captioning',
                               annotation_dir='C:/Mulong/Data/ui captioning/annotation'):
-    gui_id = str(gui_id)
-    gui_img_file = pjoin(rico_dir, gui_id + '.jpg')
-    gui_vh_file = pjoin(rico_dir, gui_id + '.json')
-    gui = GUI(gui_img_file, gui_vh_file, gui_dir, resize=(1440, 2560))
-    gui.load_elements()
-
+    # load annotation
     annotation_files = glob(pjoin(annotation_dir, gui_id + '*.json'))
     for file in annotation_files:
         annotation = json.load(open(file, 'r', encoding='utf-8'))
         print('***')
         print('[Factor]:', annotation['factor'])
         print('[Caption]', annotation['annotation'])
+    # show gui
+    gui_id = str(gui_id)
+    gui_img_file = pjoin(rico_dir, gui_id + '.jpg')
+    gui_vh_file = pjoin(rico_dir, gui_id + '.json')
+    gui = GUI(gui_img_file, gui_vh_file, gui_dir, resize=(1440, 2560))
+    gui.load_elements()
     gui.show_all_elements()
     return gui
 
