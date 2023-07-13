@@ -50,6 +50,26 @@ def check_annotations(gui_dir='C:/Mulong/Data/rico/rico_sca',
     cv2.destroyAllWindows()
 
 
+def check_annotation_by_ui_id(gui_id,
+                              rico_dir='C:/Mulong/Data/rico/rico_sca',
+                              gui_dir='C:/Mulong/Data/ui captioning',
+                              annotation_dir='C:/Mulong/Data/ui captioning/annotation'):
+    gui_id = str(gui_id)
+    gui_img_file = pjoin(rico_dir, gui_id + '.jpg')
+    gui_vh_file = pjoin(rico_dir, gui_id + '.json')
+    gui = GUI(gui_img_file, gui_vh_file, gui_dir, resize=(1440, 2560))
+    gui.load_elements()
+
+    annotation_files = glob(pjoin(annotation_dir, gui_id + '*.json'))
+    for file in annotation_files:
+        annotation = json.load(open(file, 'r', encoding='utf-8'))
+        print('***')
+        print('[Factor]:', annotation['factor'])
+        print('[Caption]', annotation['annotation'])
+    gui.show_all_elements()
+    return gui
+
+
 class DataCollector:
     def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560), engine_model='gpt-3.5-turbo'):
         self.input_dir = input_dir
