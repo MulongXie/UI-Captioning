@@ -1,3 +1,4 @@
+import time
 from os.path import join as pjoin
 from glob import glob
 import os
@@ -125,7 +126,7 @@ class DataCollector:
         # 1. analyze GUI
         if not load_gui:
             print('*** GUI Analysis ***')
-            gui = self.analyze_gui(gui_img_file, gui_json_file, show=show_gui)
+            gui = self.analyze_gui(gui_img_file, gui_json_file, show=False)
         else:
             print('*** Load GUI Info ***')
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
@@ -165,7 +166,7 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False, turn_on_revision=True):
+    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False, turn_on_revision=True, wait_time=2):
         '''
         :param start_gui_no: int, start gui file name
         :param end_gui_no: int, end gui file name
@@ -173,13 +174,15 @@ class DataCollector:
         :param load_gui: whether to load an existing GUI analysis result
         :param show_gui: whether to show the GUI while annotating
         :param turn_on_revision: whether to offer the chance to revise the summarization at all
+        :param wait_time: time to wait in each iteration to avoid over-frequent request
         '''
         self.turn_on_revision = turn_on_revision
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
-            gui_vh_file = self.vh_files[i]
+            gui_vh_file = self.vh_files[start_gui_no + i]
             print('\n\n=== Annotating (press "q" to quit) === [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
             if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
+            time.sleep(wait_time)
 
 
 if __name__ == '__main__':
