@@ -62,10 +62,10 @@ def check_annotation_by_ui_id(gui_id,
                               gui_dir='C:/Mulong/Data/ui captioning',
                               annotation_dir='C:/Mulong/Data/ui captioning/annotation'):
     # load annotation
-    annotation_files = glob(pjoin(annotation_dir, gui_id + '*.json'))
+    annotation_files = glob(pjoin(annotation_dir, str(gui_id) + '*.json'))
     for file in annotation_files:
         annotation = json.load(open(file, 'r', encoding='utf-8'))
-        print('***')
+        print('***********')
         print('[Factor]:', annotation['factor'])
         print('[Caption]', annotation['annotation'])
     # show gui
@@ -75,6 +75,7 @@ def check_annotation_by_ui_id(gui_id,
     gui = GUI(gui_img_file, gui_vh_file, gui_dir, resize=(1440, 2560))
     gui.load_elements()
     gui.show_all_elements()
+    cv2.destroyWindow('elements')
     return gui
 
 
