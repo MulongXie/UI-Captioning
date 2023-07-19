@@ -25,12 +25,14 @@ def rico_sca_data_generation(rico_sca_dir='C:/Mulong/Data/rico/rico_sca', rico_d
         shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
 
 
-def check_annotations(rico_dir='C:/Mulong/Data/rico/rico_sca',
+def check_annotations(start_gui_no, end_gui_no,
+                      rico_dir='C:/Mulong/Data/rico/rico_sca',
                       gui_dir='C:/Mulong/Data/ui captioning',
                       annotation_dir='C:/Mulong/Data/ui captioning/annotation',
                       revision_dir='C:/Mulong/Data/ui captioning/annotation-revision'):
     annotation_files = glob(pjoin(annotation_dir, '*'))
-    for file in annotation_files:
+    annotation_files = sorted(annotation_files, key=lambda x: int(os.path.basename(x).split('_')[0]))
+    for file in annotation_files[start_gui_no: end_gui_no]:
         # load annotation
         annotation = json.load(open(file, 'r', encoding='utf-8'))
         print('[File]:', file)
@@ -44,12 +46,14 @@ def check_annotations(rico_dir='C:/Mulong/Data/rico/rico_sca',
         gui.load_elements()
         key = gui.show_all_elements()
         if key == ord('q'):
+            cv2.destroyWindow('elements')
             break
         elif key == ord('r'):
             annotation['annotation'] = input('Revision:')
             revision_file = pjoin(revision_dir, annotation['gui-no'] + '_' + annotation['factor'] + '.json')
             json.dump(annotation, open(revision_file, 'w', encoding='utf-8'), indent=4)
             print('*** Revision save to %s ***' % revision_file)
+            cv2.destroyWindow('elements')
         print('\n')
 
 
