@@ -225,4 +225,7 @@ class DataCollector:
                     cv2.destroyWindow('elements')
                     break
         annotation['annotation'] = annotation['annotation-history'][-1]
+        annotation['revision-suggestion'] = ' - '.join(annotation['revision-suggestion-history'])
+        json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
+        self.annotations.append(annotation)
         return annotation
