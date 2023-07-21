@@ -49,6 +49,7 @@ def check_annotations(start_gui_no, end_gui_no,
             cv2.destroyWindow('elements')
             break
         elif key == ord('r'):
+            annotation['revised'] = True
             annotation['annotation'] = input('Revision:')
             revision_file = pjoin(revision_dir, annotation['gui-no'] + '_' + annotation['factor'] + '.json')
             json.dump(annotation, open(revision_file, 'w', encoding='utf-8'), indent=4)
@@ -123,11 +124,11 @@ class DataCollector:
             gui.show_all_elements()
 
     '''
-    **********************
-    *** GUI Annotation ***
-    **********************
+    **********************************************
+    *** GUI Annotation V1 - Human Ground Truth ***
+    **********************************************
     '''
-    def annotate_gui(self, gui_img_file, gui_json_file, factor, load_gui=True, show_gui=False):
+    def annotate_gui_human_gt(self, gui_img_file, gui_json_file, factor, load_gui=True, show_gui=False):
         # 1. analyze GUI
         if not load_gui:
             print('*** GUI Analysis ***')
@@ -136,7 +137,6 @@ class DataCollector:
             print('*** Load GUI Info ***')
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
             gui.load_elements()
-
         ann_result = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree)}
 
         # 2. generate summarization by llm
@@ -148,6 +148,7 @@ class DataCollector:
         if show_gui:
             key = gui.show_all_elements()
             if key == ord('q'):
+                cv2.destroyWindow('elements')
                 return None
         if self.turn_on_revision:
             revise = input('Do you want to revise the summarization? ("y" or "n"): ')
@@ -171,7 +172,7 @@ class DataCollector:
         self.annotations.append(ann_result)
         return ann_result
 
-    def annotate_all_guis(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False, turn_on_revision=True, wait_time=2):
+    def annotate_all_guis_human_gt(self, start_gui_no, end_gui_no, factor_id, load_gui=False, show_gui=False, turn_on_revision=True, wait_time=2):
         '''
         :param start_gui_no: int, start gui file name
         :param end_gui_no: int, end gui file name
@@ -185,14 +186,42 @@ class DataCollector:
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
             gui_vh_file = self.vh_files[start_gui_no + i]
             print('\n\n=== Annotating (press "q" to quit) === [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
-            if not self.annotate_gui(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
+            if not self.annotate_gui_human_gt(gui_img_file, gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui, show_gui=show_gui):
                 break
             time.sleep(wait_time)
 
+    '''
+    ****************************************
+    *** GUI Annotation V2 - GPT Revision ***
+    ****************************************
+    '''
+    def annotate_gui_gpt_revision(self, gui_img_file, gui_json_file, factor, load_gui=True, show_gui=False):
+        # 1. analyze GUI
+        if not load_gui:
+            print('\n*** GUI Analysis ***')
+            gui = self.analyze_gui(gui_img_file, gui_json_file, show=False)
+        else:
+            print('\n*** Load GUI Info ***')
+            gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
+            gui.load_elements()
+        annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
+                      'annotation-history': [], 'revision-suggestion-history': [],
+                      'annotation': '', 'revision-suggestion': ''}
 
-if __name__ == '__main__':
-    data = DataCollector(input_dir='data/rico/raw/',
-                         output_dir='data/rico/',
-                         engine_model='gpt-3.5-turbo')
-    data.annotate_all_guis(start_gui_no=3, end_gui_no=9, factor_id=0,
-                           load_gui=True, show_gui=True, turn_on_revision=True)
+        # 2. iterative annotation revision
+        while True:
+            summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
+            annotation['annotation-history'].append(summarization)
+            print(summarization)
+            if show_gui:
+                print('\n*** Press "r" to revise, any key else to exit ***')
+                key = gui.show_all_elements()
+                if key == ord('r'):
+                    print('\n*** Revision Suggestions ***')
+                    revision_suggestion = input('-- Input revision points: ')
+                    annotation['revision-suggestion-history'].append(revision_suggestion)
+                else:
+                    break
+        annotation['annotation'] = annotation['annotation-history'][-1]
+        cv2.destroyWindow('elements')
+        return annotation
