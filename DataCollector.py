@@ -220,8 +220,9 @@ class DataCollector:
                     print('\n*** Revision Suggestions ***')
                     revision_suggestion = input('-- Input revision points: ')
                     annotation['revision-suggestion-history'].append(revision_suggestion)
+                    cv2.destroyWindow('elements')
                 else:
+                    cv2.destroyWindow('elements')
                     break
         annotation['annotation'] = annotation['annotation-history'][-1]
-        cv2.destroyWindow('elements')
         return annotation
