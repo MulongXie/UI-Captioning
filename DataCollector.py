@@ -207,11 +207,12 @@ class DataCollector:
             print('\n*** Load GUI Info ***')
             gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
             gui.load_elements()
+
+        # 2. iterative annotation revision
         annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
                       'annotation-history': [], 'revision-suggestion-history': [],
                       'annotation': '', 'revision-suggestion': ''}
-
-        # 2. iterative annotation revision
+        self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[-1:])
         while True:
             summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
             annotation['annotation-history'].append(summarization)
@@ -230,6 +231,8 @@ class DataCollector:
                     if turn_off.lower() == 'y':
                         self.turn_on_revision = False
                     break
+            else:
+                break
         annotation['annotation'] = annotation['annotation-history'][-1]
         annotation['revision-suggestion'] = ' - '.join(annotation['revision-suggestion-history'])
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
@@ -243,3 +246,19 @@ class DataCollector:
             print('\n\n+++ Annotating +++ [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
             self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
 
+
+if __name__ == '__main__':
+    data = DataCollector(input_dir='C:/Mulong/Data/rico/rico_sca',
+                         output_dir='C:/Mulong/Data/ui captioning - rs',
+                         engine_model='gpt-3.5-turbo')
+
+    # Option 1. single annotate_gui_gpt_revision
+    # data.annotate_gui_gpt_revision(gui_img_file='data/rico/raw/2.jpg',
+    #                                gui_json_file='data/rico/raw/2.json',
+    #                                factor='key elements', load_gui=False)
+
+    # Option 2. multiple annotate_all_guis_gpt_revision
+    data.annotate_all_guis_gpt_revision(start_gui_no=0, end_gui_no=10,
+                                        factor_id=0,
+                                        load_gui=False,
+                                        turn_on_revision=True)
