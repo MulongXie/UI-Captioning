@@ -195,7 +195,10 @@ class DataCollector:
     *** GUI Annotation V2 - GPT Revision ***
     ****************************************
     '''
-    def annotate_gui_gpt_revision(self, gui_img_file, gui_json_file, factor, load_gui=True, show_gui=False):
+    def annotate_gui_gpt_revision(self, gui_img_file, gui_json_file, factor, load_gui=True):
+        '''
+        Annotate gui with recursive gui revision
+        '''
         # 1. analyze GUI
         if not load_gui:
             print('\n*** GUI Analysis ***')
@@ -213,19 +216,30 @@ class DataCollector:
             summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
             annotation['annotation-history'].append(summarization)
             print(summarization)
-            if show_gui:
-                print('\n*** Press "r" to revise, any key else to exit ***')
-                key = gui.show_all_elements()
-                if key == ord('r'):
+            if self.turn_on_revision:
+                gui.show_all_elements()
+                revise = input('Do you want to revise the summarization? ("y" or "n"): ')
+                if revise.lower() == 'y':
                     print('\n*** Revision Suggestions ***')
                     revision_suggestion = input('-- Input revision points: ')
                     annotation['revision-suggestion-history'].append(revision_suggestion)
                     cv2.destroyWindow('elements')
                 else:
                     cv2.destroyWindow('elements')
+                    turn_off = input('Do you want to turn off revision from now? ("y" or "n"): ')
+                    if turn_off.lower() == 'y':
+                        self.turn_on_revision = False
                     break
         annotation['annotation'] = annotation['annotation-history'][-1]
         annotation['revision-suggestion'] = ' - '.join(annotation['revision-suggestion-history'])
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(annotation)
         return annotation
+
+    def annotate_all_guis_gpt_revision(self, start_gui_no, end_gui_no, factor_id, load_gui=False, turn_on_revision=True, wait_time=2):
+        self.turn_on_revision = turn_on_revision
+        for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
+            gui_vh_file = self.vh_files[start_gui_no + i]
+            print('\n\n+++ Annotating +++ [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
+            self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
+
