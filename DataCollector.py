@@ -267,6 +267,7 @@ if __name__ == '__main__':
     #                                factor='key elements', load_gui=False)
 
     # Option 2. multiple annotate_all_guis_gpt_revision
+    data.load_annotations(start_gui_no=0, end_gui_no=5, factor_id=0)
     data.annotate_all_guis_gpt_revision(start_gui_no=0, end_gui_no=10,
                                         factor_id=0,
                                         load_gui=False,
