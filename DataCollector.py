@@ -81,7 +81,7 @@ def check_annotation_by_ui_id(gui_id,
 
 
 class DataCollector:
-    def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560), engine_model='gpt-3.5-turbo'):
+    def __init__(self, input_dir, output_dir, gui_img_resize=(1440, 2560), engine_model='gpt-3.5-turbo-16k'):
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.output_annotation_dir = pjoin(self.output_dir, 'annotation')
