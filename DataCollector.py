@@ -246,6 +246,15 @@ class DataCollector:
             print('\n\n+++ Annotating +++ [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
             self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
 
+    def load_annotations(self, start_gui_no, end_gui_no, factor_id):
+        factor = self.annotation_factors[factor_id]
+        for i in range(start_gui_no, end_gui_no):
+            file_name = pjoin(self.output_annotation_dir, str(i) + '_' + factor + '.json')
+            if os.path.exists(file_name):
+                print('Load', file_name)
+                annotation = json.load(open(file_name, 'r', encoding='utf-8'))
+                self.annotations.append(annotation)
+
 
 if __name__ == '__main__':
     data = DataCollector(input_dir='C:/Mulong/Data/rico/rico_sca',
