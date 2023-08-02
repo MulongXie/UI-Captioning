@@ -245,6 +245,7 @@ class DataCollector:
             gui_vh_file = self.vh_files[start_gui_no + i]
             print('\n\n+++ Annotating +++ [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
             self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
+            time.sleep(wait_time)
 
     def load_annotations(self, start_gui_no, end_gui_no, factor_id):
         factor = self.annotation_factors[factor_id]
@@ -259,7 +260,7 @@ class DataCollector:
 if __name__ == '__main__':
     data = DataCollector(input_dir='C:/Mulong/Data/rico/rico_sca',
                          output_dir='C:/Mulong/Data/ui captioning - rs',
-                         engine_model='gpt-3.5-turbo')
+                         engine_model='gpt-3.5-turbo-16k')
 
     # Option 1. single annotate_gui_gpt_revision
     # data.annotate_gui_gpt_revision(gui_img_file='data/rico/raw/2.jpg',
