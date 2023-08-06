@@ -98,6 +98,7 @@ class DataCollector:
 
         self.turn_on_revision = True   # True to turn on revision
         self.annotations = []
+        self.revise_suggestions = ''
         self.annotation_factors = ['Key Element', 'Functionality', 'Layout', "Accessibility"]
 
     '''
@@ -234,7 +235,8 @@ class DataCollector:
             else:
                 break
         annotation['annotation'] = annotation['annotation-history'][-1]
-        annotation['revision-suggestion'] = ' - '.join(annotation['revision-suggestion-history'])
+        annotation['revision-suggestion'] = self.revise_suggestions + ' - '.join(annotation['revision-suggestion-history'])
+        self.revise_suggestions = annotation['revision-suggestion']
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(annotation)
         return annotation
@@ -255,6 +257,7 @@ class DataCollector:
                 print('Load', file_name)
                 annotation = json.load(open(file_name, 'r', encoding='utf-8'))
                 self.annotations.append(annotation)
+                self.revise_suggestions = annotation['revision-suggestion']
 
 
 if __name__ == '__main__':
