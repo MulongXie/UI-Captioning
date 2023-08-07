@@ -32,9 +32,8 @@ class Summarizer:
                 #            '#Revised Ground Truth Summarization:\n' + annotations['annotation'] + '.\n' \
                 #            '#Reasons for Revision:\n' + annotations['revision-suggestion'] + '.\n'
                 self.conversation += [
-                    {'role': 'user', 'content': 'Example ' + str(i) + ': #GUI:' + str(ann['element-tree'])},
-                    {'role': 'user', 'content': '#Ground Truth Summarization: ' + ann['annotation']},
-                    {'role': 'user', 'content': '#Revision Suggestions: ' + ann['revision-suggestion']},
+                    # {'role': 'user', 'content': 'Example ' + str(i) + ': #GUI:' + str(ann['element-tree'])},
+                    {'role': 'user', 'content': 'Example ' + str(i) + '- #Ground Truth Summarization: ' + ann['annotation'] + '. #Revision Suggestions: ' + ann['revision-suggestion']},
                 ]
             self.conversation.append(
                 {'role': 'user', 'content': 'Try your best to learn and follow the Examples in future UI summarization.'},
@@ -44,15 +43,14 @@ class Summarizer:
         print('\n==============================')
         print('\n*** Summarization [' + factor + '] ***')
         # self.reset_conversation()
-        self.conversation.append(
-            {'role': 'user', 'content': 'Summarize this UI in terms of ' + factor + '. UI: ' + str(gui.element_tree)}
-        )
-        if len(annotation['revision-suggestion-history']) > 0:
-            for i, revision in enumerate(annotation['revision-suggestion-history']):
-                self.conversation.append({'role': 'assistant', 'content': annotation['annotation-history'][i]})
-                self.conversation.append({'role': 'user', 'content': 'Your summarization does not perfectly meet our expectation, '
-                                                                     'consider revise it with the following revision suggestions: '
-                                                                     + revision})
+        if len(annotation['revision-suggestion-history']) == 0:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Summarize this UI in terms of ' + factor + '. UI: ' + str(gui.element_tree)}
+            )
+        else:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Your summarization does not perfectly meet our expectation, consider revise it with the following revision suggestions: ' + annotation['revision-suggestion-history'][-1]}
+            )
         self.conversation.append(self.engine.ask_openai_conversation(self.conversation, printlog))
         self.gui_summary = self.conversation[-1]['content'].replace('\n\n', '\n')
         return self.gui_summary
