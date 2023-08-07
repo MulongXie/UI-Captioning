@@ -7,6 +7,7 @@ import sys
 import shutil
 import warnings
 import cv2
+import numpy as np
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
@@ -97,6 +98,7 @@ class DataCollector:
         self.llm_summarizer = Summarizer(self.llm_engine)
 
         self.turn_on_revision = True   # True to turn on revision
+        self.revise_stop_point = 1     # the UI number where the revision stops
         self.annotations = []
         self.revise_suggestions = ''
         self.annotation_factors = ['Key Element', 'Functionality', 'Layout', "Accessibility"]
@@ -213,7 +215,8 @@ class DataCollector:
         annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
                       'annotation-history': [], 'revision-suggestion-history': [],
                       'annotation': '', 'revision-suggestion': ''}
-        self.llm_summarizer.wrap_previous_annotations_as_examples(self.annotations[-1:])
+        prev_ann = [self.annotations[np.random.randint(0, max(1, self.revise_stop_point))]] if len(self.annotations) > 0 else []
+        self.llm_summarizer.wrap_previous_annotations_as_examples(prev_ann)
         while True:
             summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
             annotation['annotation-history'].append(summarization)
@@ -231,6 +234,7 @@ class DataCollector:
                     turn_off = input('Do you want to turn off revision from now? ("y" or "n"): ')
                     if turn_off.lower() == 'y':
                         self.turn_on_revision = False
+                    self.revise_stop_point += 1
                     break
             else:
                 break
@@ -249,7 +253,8 @@ class DataCollector:
             self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
             time.sleep(wait_time)
 
-    def load_annotations(self, start_gui_no, end_gui_no, factor_id):
+    def load_annotations(self, start_gui_no, end_gui_no, factor_id, revise_stop_point):
+        self.revise_stop_point = revise_stop_point
         factor = self.annotation_factors[factor_id]
         for i in range(start_gui_no, end_gui_no):
             file_name = pjoin(self.output_annotation_dir, str(i) + '_' + factor + '.json')
@@ -271,7 +276,7 @@ if __name__ == '__main__':
     #                                factor='key elements', load_gui=False)
 
     # Option 2. multiple annotate_all_guis_gpt_revision
-    data.load_annotations(start_gui_no=0, end_gui_no=5, factor_id=0)
+    data.load_annotations(start_gui_no=0, end_gui_no=5, factor_id=0, revise_stop_point=1)
     data.annotate_all_guis_gpt_revision(start_gui_no=0, end_gui_no=10,
                                         factor_id=0,
                                         load_gui=False,
