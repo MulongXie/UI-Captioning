@@ -33,10 +33,10 @@ class Summarizer:
                 #            '#Reasons for Revision:\n' + annotations['revision-suggestion'] + '.\n'
                 self.conversation += [
                     # {'role': 'user', 'content': 'Example ' + str(i) + ': #GUI:' + str(ann['element-tree'])},
-                    {'role': 'user', 'content': 'Example ' + str(i) + '- #Ground Truth Summarization: ' + ann['annotation'] + '. #Revision Suggestions: ' + ann['revision-suggestion']},
+                    {'role': 'user', 'content': '#Example Summarization: ' + ann['annotation'] + '.\n #Summarization Rules: ' + ann['revision-suggestion']},
                 ]
             self.conversation.append(
-                {'role': 'user', 'content': 'Try your best to learn and follow the Examples in future UI summarization.'},
+                {'role': 'user', 'content': 'Learn from the #Example Summarization and exactly follow the #Summarization Rules in future summarization.'},
             )
 
     def summarize_gui_with_revise_suggestion(self, gui, factor, annotation, printlog=False):

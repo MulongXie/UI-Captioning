@@ -101,7 +101,7 @@ class DataCollector:
         self.revise_stop_point = 1     # the UI number where the revision stops
         self.annotations = []
         self.revise_suggestions = ''
-        self.annotation_factors = ['Key Element', 'Functionality', 'Layout', "Accessibility"]
+        self.annotation_factors = ['Key Elements', 'Functionality', 'Layout', "Accessibility"]
 
     '''
     ********************
@@ -215,7 +215,7 @@ class DataCollector:
         annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
                       'annotation-history': [], 'revision-suggestion-history': [],
                       'annotation': '', 'revision-suggestion': ''}
-        prev_ann = [self.annotations[np.random.randint(0, max(1, self.revise_stop_point))]] if len(self.annotations) > 0 else []
+        prev_ann = [self.annotations[np.random.randint(0, max(1, self.revise_stop_point - 1))]] if len(self.annotations) > 0 else []
         self.llm_summarizer.wrap_previous_annotations_as_examples(prev_ann)
         while True:
             summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
@@ -239,7 +239,7 @@ class DataCollector:
             else:
                 break
         annotation['annotation'] = annotation['annotation-history'][-1]
-        annotation['revision-suggestion'] = self.revise_suggestions + ' - '.join(annotation['revision-suggestion-history'])
+        annotation['revision-suggestion'] = ' - ' + self.revise_suggestions + '. - '.join(annotation['revision-suggestion-history'])
         self.revise_suggestions = annotation['revision-suggestion']
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(annotation)
@@ -281,3 +281,4 @@ if __name__ == '__main__':
                                         factor_id=0,
                                         load_gui=False,
                                         turn_on_revision=True)
+    print(data.llm_summarizer.conversation)   # check the conversation
