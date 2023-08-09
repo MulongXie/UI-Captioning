@@ -239,8 +239,13 @@ class DataCollector:
             else:
                 break
         annotation['annotation'] = annotation['annotation-history'][-1]
-        annotation['revision-suggestion'] = ' - ' + self.revise_suggestions + '. - '.join(annotation['revision-suggestion-history'])
+        # append revise suggestions
+        revise_suggestions = ''
+        for rs in annotation['revision-suggestion-history']:
+            revise_suggestions = revise_suggestions + ' - ' + rs + '\n'
+        annotation['revision-suggestion'] = self.revise_suggestions + revise_suggestions
         self.revise_suggestions = annotation['revision-suggestion']
+        # save annotation
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(annotation)
         return annotation
