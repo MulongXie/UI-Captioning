@@ -215,8 +215,9 @@ class DataCollector:
         annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
                       'annotation-history': [], 'revision-suggestion-history': [],
                       'annotation': '', 'revision-suggestion': ''}
-        prev_ann = [self.annotations[np.random.randint(0, max(1, self.revise_stop_point - 1))]] if len(self.annotations) > 0 else []
-        self.llm_summarizer.wrap_previous_annotations_as_examples(prev_ann)
+        prev_ann = self.annotations[np.random.randint(0, max(1, self.revise_stop_point - 1))]['annotation'] if len(self.annotations) > 0 else None
+        self.llm_summarizer.wrap_previous_annotation_and_revise_suggestions(annotation=prev_ann, revise_suggestions=self.revise_suggestions)
+
         while True:
             summarization = self.llm_summarizer.summarize_gui_with_revise_suggestion(gui, factor, annotation)
             annotation['annotation-history'].append(summarization)

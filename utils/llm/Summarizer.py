@@ -39,6 +39,16 @@ class Summarizer:
                 {'role': 'user', 'content': 'Learn from the #Example Summarization and exactly follow the #Summarization Rules in future summarization.'},
             )
 
+    def wrap_previous_annotation_and_revise_suggestions(self, annotation=None, revise_suggestions=None):
+        self.reset_conversation()
+        # append previous annotations as examples
+        if annotation:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Here is the example of appropriate UI summarization.\n'
+                                            '#Example Summarization: ' + annotation + '.\n #Summarization Rules: ' + revise_suggestions + '\n'
+                                            'Learn from the #Example Summarization and strictly follow the #Summarization Rules in future summarization.'}
+            )
+
     def summarize_gui_with_revise_suggestion(self, gui, factor, annotation, printlog=False):
         print('\n==============================')
         print('\n*** Summarization [' + factor + '] ***')
