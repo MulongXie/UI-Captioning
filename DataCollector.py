@@ -126,6 +126,12 @@ class DataCollector:
         if show:
             gui.show_all_elements()
 
+    def analyze_guis_in_batch(self, start_gui_no, end_gui_no):
+        for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
+            gui_vh_file = self.vh_files[start_gui_no + i]
+            print('[%d / %d] %s' % (i + start_gui_no, end_gui_no, gui_img_file))
+            self.analyze_gui(gui_img_file, gui_vh_file)
+
     '''
     **********************************************
     *** GUI Annotation V1 - Human Ground Truth ***
