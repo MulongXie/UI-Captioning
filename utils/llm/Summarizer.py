@@ -64,3 +64,20 @@ class Summarizer:
         self.conversation.append(self.engine.ask_openai_conversation(self.conversation, printlog))
         self.gui_summary = self.conversation[-1]['content'].replace('\n\n', '\n')
         return self.gui_summary
+    
+    def summarize_overall_with_revise_suggestion(self, gui, factor, factor_annotation, annotation, printlog=False):
+        print('\n==============================')
+        print('\n*** Summarization [' + factor + '] ***')
+        # self.reset_conversation()
+        factor_annotation = '.\nYou have already had the annotations in terms of each factors which should be used as reference for the summary. \n' + factor_annotation
+        if len(annotation['revision-suggestion-history']) == 0:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Summarize this UI in terms of ' + factor + factor_annotation}
+            )
+        else:
+            self.conversation.append(
+                {'role': 'user', 'content': 'Your summarization does not perfectly meet our expectation, consider revise it with the following revision suggestions: ' + annotation['revision-suggestion-history'][-1]}
+            )
+        self.conversation.append(self.engine.ask_openai_conversation(self.conversation, printlog))
+        self.gui_summary = self.conversation[-1]['content'].replace('\n\n', '\n')
+        return self.gui_summary
