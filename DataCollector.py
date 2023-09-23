@@ -11,20 +11,23 @@ import numpy as np
 
 from utils.classification.IconClassifier import IconClassifier
 from utils.classification.IconCaption import IconCaption
-from utils.llm.Openai import OpenAI
+from utils.llm.openai import OpenAI
 from utils.llm.Summarizer import Summarizer
 from module.GUI import GUI
+from tqdm import tqdm
 sys.path.append('utils/classification')
 warnings.filterwarnings("ignore", category=Warning)
 
 
 def rico_sca_data_generation(rico_sca_dir='C:/Mulong/Data/rico/rico_sca', rico_data_dir='D:/Mulong/Datasets/gui/rico/combined/all'):
-    ui_no = open(pjoin(rico_sca_dir, 'rico_sca.txt'), 'r')
-    for line in ui_no.readlines():
-        ui_name = line.split('.')[0]
-        shutil.copy(pjoin(rico_data_dir, ui_name + '.jpg'), pjoin(rico_sca_dir, ui_name + '.jpg'))
-        shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
-
+    ui_no = open('rico_sca.txt', 'r')
+    for line in tqdm(ui_no.readlines()):
+        try:
+            ui_name = line.split('.')[0]
+            shutil.copy(pjoin(rico_data_dir, ui_name + '.jpg'), pjoin(rico_sca_dir, ui_name + '.jpg'))
+            shutil.copy(pjoin(rico_data_dir, ui_name + '.json'), pjoin(rico_sca_dir, ui_name + '.json'))
+        except Exception as error:
+            print(error)
 
 def check_annotations(start_gui_no, end_gui_no,
                       rico_dir='C:/Mulong/Data/rico/rico_sca',
@@ -101,7 +104,7 @@ class DataCollector:
         self.revise_stop_point = 1     # the UI number where the revision stops
         self.annotations = []
         self.revise_suggestions = ''
-        self.annotation_factors = ['Key Elements', 'Functionality', 'Layout', "Accessibility"]
+        self.annotation_factors = ['Key Elements', 'Functionality', 'Layout', 'Accessibility', 'Overall']
 
     '''
     ********************
@@ -125,12 +128,6 @@ class DataCollector:
         gui.load_elements()
         if show:
             gui.show_all_elements()
-
-    def analyze_guis_in_batch(self, start_gui_no, end_gui_no):
-        for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
-            gui_vh_file = self.vh_files[start_gui_no + i]
-            print('[%d / %d] %s' % (i + start_gui_no, end_gui_no, gui_img_file))
-            self.analyze_gui(gui_img_file, gui_vh_file)
 
     '''
     **********************************************
@@ -256,30 +253,103 @@ class DataCollector:
         json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
         self.annotations.append(annotation)
         return annotation
+    
+    def annotate_overall_gpt_revision(self, gui_img_file, gui_json_file, factor, load_gui=True):
+        '''
+        Annotate gui with recursive gui revision
+        '''
+        def load_factor_annotation(factor):
+            try:
+                file_name = pjoin(self.output_annotation_dir, os.path.basename(gui_img_file).split('.')[0] + '_' + factor + '.json')
+                annotation = json.load(open(file_name, 'r', encoding='utf-8'))
+                return factor + ': ' + annotation['annotation']
+            except Exception as error:
+                print('Read {} annotation error {}'.format(factor, error))
+                return factor + ': '
+
+        # 1. analyze GUI
+        if not load_gui:
+            print('\n*** GUI Analysis ***')
+            gui = self.analyze_gui(gui_img_file, gui_json_file, show=False)
+        else:
+            print('\n*** Load GUI Info ***')
+            gui = GUI(gui_img_file=gui_img_file, gui_json_file=gui_json_file, output_file_root=self.output_dir, resize=self.gui_img_resize)
+            gui.load_elements()
+
+        # 2. iterative annotation revision
+        annotation = {'gui-no': gui.gui_no, 'factor': factor, 'element-tree': str(gui.element_tree),
+                      'annotation-history': [], 'revision-suggestion-history': [],
+                      'annotation': '', 'revision-suggestion': ''}
+        prev_ann = self.annotations[np.random.randint(0, max(1, self.revise_stop_point - 1))]['annotation'] if len(self.annotations) > 0 else None
+        self.llm_summarizer.wrap_previous_annotation_and_revise_suggestions(annotation=prev_ann, revise_suggestions=self.revise_suggestions)
+
+        key_element = load_factor_annotation(self.annotation_factors[0])
+        functionality = load_factor_annotation(self.annotation_factors[1])
+        layout = load_factor_annotation(self.annotation_factors[2])
+        accessibility = load_factor_annotation(self.annotation_factors[3])
+        factor_annotation = key_element + '\n' + functionality + '\n' + layout + '\n' + accessibility + '\n'
+
+        while True:
+            summarization = self.llm_summarizer.summarize_overall_with_revise_suggestion(gui, factor, factor_annotation, annotation)
+            annotation['annotation-history'].append(summarization)
+            print(summarization)
+            if self.turn_on_revision:
+                gui.show_all_elements()
+                revise = input('Do you want to revise the summarization? ("y" or "n"): ')
+                if revise.lower() == 'y':
+                    print('\n*** Revision Suggestions ***')
+                    revision_suggestion = input('-- Input revision points: ')
+                    annotation['revision-suggestion-history'].append(revision_suggestion)
+                    cv2.destroyWindow('elements')
+                else:
+                    cv2.destroyWindow('elements')
+                    turn_off = input('Do you want to turn off revision from now? ("y" or "n"): ')
+                    if turn_off.lower() == 'y':
+                        self.turn_on_revision = False
+                    self.revise_stop_point += 1
+                    break
+            else:
+                break
+        annotation['annotation'] = annotation['annotation-history'][-1]
+        # append revise suggestions
+        revise_suggestions = ''
+        for rs in annotation['revision-suggestion-history']:
+            revise_suggestions = revise_suggestions + ' - ' + rs + '\n'
+        annotation['revision-suggestion'] = self.revise_suggestions + revise_suggestions
+        self.revise_suggestions = annotation['revision-suggestion']
+        # save annotation
+        json.dump(annotation, open(pjoin(self.output_annotation_dir, str(gui.gui_no) + '_' + factor + '.json'), 'w', encoding='utf-8'), indent=4)
+        self.annotations.append(annotation)
+        return annotation
 
     def annotate_all_guis_gpt_revision(self, start_gui_no, end_gui_no, factor_id, load_gui=False, turn_on_revision=True, wait_time=2):
         self.turn_on_revision = turn_on_revision
         for i, gui_img_file in enumerate(self.img_files[start_gui_no: end_gui_no]):
+            with open('start_num.txt', 'w') as num_file:
+                num_file.writelines(str(start_gui_no + i))
             gui_vh_file = self.vh_files[start_gui_no + i]
             print('\n\n+++ Annotating +++ [%d / %d] %s' % (i+start_gui_no, end_gui_no, gui_img_file))
-            self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
+            if factor_id < 4:
+                self.annotate_gui_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
+            else:
+                self.annotate_overall_gpt_revision(gui_img_file, gui_json_file=gui_vh_file, factor=self.annotation_factors[factor_id], load_gui=load_gui)
             time.sleep(wait_time)
 
     def load_annotations(self, start_gui_no, end_gui_no, factor_id, revise_stop_point):
         self.revise_stop_point = revise_stop_point
         factor = self.annotation_factors[factor_id]
-        for i in range(start_gui_no, end_gui_no):
-            file_name = pjoin(self.output_annotation_dir, str(i) + '_' + factor + '.json')
+        for image_file in self.img_files[start_gui_no:end_gui_no]:
+            file_name = pjoin(self.output_annotation_dir, os.path.basename(image_file).split('.')[0] + '_' + factor + '.json')
             if os.path.exists(file_name):
                 print('Load', file_name)
                 annotation = json.load(open(file_name, 'r', encoding='utf-8'))
                 self.annotations.append(annotation)
                 self.revise_suggestions = annotation['revision-suggestion']
 
-
 if __name__ == '__main__':
-    data = DataCollector(input_dir='C:/Mulong/Data/rico/rico_sca',
-                         output_dir='C:/Mulong/Data/ui captioning - rs',
+    #rico_sca_data_generation(rico_sca_dir='data/rico_sca', rico_data_dir='data/combined')
+    data = DataCollector(input_dir='data/rico/rico_sca',
+                         output_dir='data/rico',
                          engine_model='gpt-3.5-turbo-16k')
 
     # Option 1. single annotate_gui_gpt_revision
@@ -287,10 +357,16 @@ if __name__ == '__main__':
     #                                gui_json_file='data/rico/raw/2.json',
     #                                factor='key elements', load_gui=False)
 
-    # Option 2. multiple annotate_all_guis_gpt_revision
-    data.load_annotations(start_gui_no=0, end_gui_no=5, factor_id=0, revise_stop_point=1)
-    data.annotate_all_guis_gpt_revision(start_gui_no=0, end_gui_no=10,
-                                        factor_id=0,
-                                        load_gui=False,
-                                        turn_on_revision=True)
-    print(data.llm_summarizer.conversation)   # check the conversation
+    # Option 2. multiple annotate_all_guis_gpt_revision  
+    try:
+        with open('start_num.txt', 'r') as num_file:
+            start_num = int(num_file.readlines()[0])
+    except Exception as error:
+        print('Read start number file error', error)
+        start_num = 10000      
+    data.load_annotations(start_gui_no=105, end_gui_no=110, factor_id=3, revise_stop_point=5)
+    data.annotate_all_guis_gpt_revision(start_gui_no=start_num, end_gui_no=15001,
+                                        factor_id=3,
+                                        load_gui=True,
+                                        turn_on_revision=False)
+    
