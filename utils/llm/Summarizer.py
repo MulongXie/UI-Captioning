@@ -65,6 +65,7 @@ class Summarizer:
         self.gui_summary = self.conversation[-1]['content'].replace('\n\n', '\n')
         return self.gui_summary
     
+    # summarize overall
     def summarize_overall_with_revise_suggestion(self, gui, factor, factor_annotation, annotation, printlog=False):
         print('\n==============================')
         print('\n*** Summarization [' + factor + '] ***')
