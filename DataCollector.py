@@ -364,9 +364,9 @@ if __name__ == '__main__':
     except Exception as error:
         print('Read start number file error', error)
         start_num = 10000      
-    data.load_annotations(start_gui_no=105, end_gui_no=110, factor_id=3, revise_stop_point=5)
+    data.load_annotations(start_gui_no=105, end_gui_no=110, factor_id=4, revise_stop_point=5)
     data.annotate_all_guis_gpt_revision(start_gui_no=start_num, end_gui_no=15001,
-                                        factor_id=3,
+                                        factor_id=4,
                                         load_gui=True,
                                         turn_on_revision=False)
     
